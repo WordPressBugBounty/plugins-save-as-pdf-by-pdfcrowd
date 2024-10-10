@@ -283,7 +283,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
     public function validate($input) {
         $options = get_option($this->plugin_name);
         $valid = $input;
-        $valid['version'] = 4200;
+        $valid['version'] = 4210;
 
         if(isset($input['wp_submit_action'])) {
             if($input['wp_submit_action'] === 'reset') {
@@ -459,11 +459,11 @@ class Save_As_Pdf_Pdfcrowd_Admin {
         if (isset($input['content_viewport_width']) &&
             $input['content_viewport_width'] != '') {
             $content_viewport_width = $input['content_viewport_width'];
-            if (!preg_match("/(?i)^(balanced|small|medium|large|extra-large|[0-9]+)$/", $content_viewport_width))
+            if (!preg_match("/(?i)^(balanced|small|medium|large|extra-large|[0-9]+(px)?)$/", $content_viewport_width))
                 add_settings_error(
                 'content_viewport_width',
                 'empty_content_viewport_width',
-                pdfcrowd_create_invalid_value_message($content_viewport_width, 'Content Viewport Width', 'The value must be "balanced", "small", "medium", "large", "extra-large", or a number in the range 96-65000.'));
+                pdfcrowd_create_invalid_value_message($content_viewport_width, 'Content Viewport Width', 'The value must be "balanced", "small", "medium", "large", "extra-large", or a number in the range 96-65000px.'));
             
         }
         $valid['content_viewport_width'] = isset($input['content_viewport_width']) ? $input['content_viewport_width'] : '';
@@ -471,7 +471,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
         if (isset($input['content_viewport_height']) &&
             $input['content_viewport_height'] != '') {
             $content_viewport_height = $input['content_viewport_height'];
-            if (!preg_match("/(?i)^(auto|large|[0-9]+)$/", $content_viewport_height))
+            if (!preg_match("/(?i)^(auto|large|[0-9]+(px)?)$/", $content_viewport_height))
                 add_settings_error(
                 'content_viewport_height',
                 'empty_content_viewport_height',

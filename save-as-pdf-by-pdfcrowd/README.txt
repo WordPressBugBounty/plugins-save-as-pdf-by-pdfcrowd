@@ -111,6 +111,9 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 == Changelog ==
 
+= 4.2.1 =
+* Fix Content Viewport Width and Content Viewport Height accepts a numeric value followed by the "px" unit to specify pixels.
+
 = 4.2.0 =
 * The "Conversion Config" JSON supports `odd`, `even`, and `last` for page definition.
 * The "Print Page Range" option supports `odd`, `even`, and `last` for page selection.
