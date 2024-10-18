@@ -52,10 +52,9 @@ A Pdfcrowd API license is versatile, allowing use across multiple WordPress webs
 If the default plugin output does not meet your requirements, consider adjusting the following settings individually. You may need to activate the "Expert Settings" option to access some of these features.
 
 * **Mode > Conversion Mode:** Try switching it to either "Upload" or "Content".
-* **Print Resolution > Viewport Width:** Experiment with different widths to see which yields the best result.
-* **Print Resolution > Viewport Height:** Increase this value, for example, to 50000, to see if it improves the output.
-* **Print Resolution > Smart Scaling Mode:** Different scaling modes can significantly alter the PDF's page layout.
-* **Print Resolution > Rendering Mode:** This setting also impacts the layout of the PDF page.
+* **Print Resolution > Content Viewport Width:** Experiment with different widths to see which yields the best result.
+* **Print Resolution > Content Fit Mode:** Different scaling modes can significantly alter the PDF's page layout.
+* **Print Resolution > Content Viewport Height:** Increase this value, for example, to 50000, to see if it improves the output.
 == Support ==
 
 Please [contact us](https://pdfcrowd.com/contact/) or write to support@pdfcrowd.com if you need any help. We will be happy to assist you with configuring the plugin to ensure its output meets your needs.
