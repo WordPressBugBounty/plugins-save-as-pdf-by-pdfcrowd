@@ -231,7 +231,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4210',
+        'version' => '4220',
     );
 
     private static $API_OPTIONS = array(
@@ -456,7 +456,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4210) {
+        if($options['version'] == 4220) {
             return $options;
         }
 
@@ -491,7 +491,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4210;
+        $options['version'] = 4220;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -581,8 +581,10 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
             }
             else if($options['button_image'] != 'custom_image' || $options['button_image_url']) {
                 $image_style = "width: {$options['button_image_width']}px; height: {$options['button_image_height']}px;";
-                $image_url = $options['button_image'] == 'custom_image' ? $options['button_image_url'] : self::$DEFAULT_IMAGES[$options['button_image']];
-                $image_style = esc_html($image_style);
+                $image_url = $options['button_image'] == 'custom_image'
+                           ? esc_attr($options['button_image_url'])
+                           : self::$DEFAULT_IMAGES[$options['button_image']];
+                $image_style = esc_attr($image_style);
                 $image = "<img style='$image_style' src=\"$image_url\"/>";
             }
         }
@@ -663,7 +665,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         }
 
         if(!empty($btn_style)) {
-            $btn_style = esc_html($btn_style);
+            $btn_style = esc_attr($btn_style);
             $btn_style = " style='{$btn_style}'";
         }
         if(!empty($div_style)) {
@@ -687,7 +689,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $config = json_encode($config);
 
         $button_id = !empty($options['button_id']) ?
-                   "id='" . $options['button_id'] . "'" : '';
+                   "id='" . esc_attr($options['button_id']) . "'" : '';
 
         $button = "<{$button_tag} class='$classes'{$div_style}><{$button_tag} {$button_id} class='{$btn_classes}'{$btn_style} onclick='window.SaveAsPDFPdfcrowd(\"$custom_options\", $enc_data, $config, this);' data-pdfcrowd-flags='{$pflags}'>";
 
@@ -1245,7 +1247,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.2.1 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.2.2 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 

@@ -3185,6 +3185,7 @@ The structure of the JSON must be:
       <li><em>headerHeight</em>: Height of the header (optional).</li>
       <li><em>footerHeight</em>: Height of the footer (optional).</li>
       <li><em>orientation</em>: Page orientation, such as "portrait" or "landscape" (optional).</li>
+      <li><em>backgroundColor</em>: Page background color in RRGGBB or RRGGBBAA hexadecimal format (optional).</li>
     </ul>
   </li>
 </ul>

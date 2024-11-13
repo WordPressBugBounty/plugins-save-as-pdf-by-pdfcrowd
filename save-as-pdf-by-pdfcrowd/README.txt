@@ -3,7 +3,7 @@ Contributors: Pdfcrowd
 Tags: pdf conversion, web to pdf, content export, pdf widget, printable content
 Requires PHP: 5.1
 Requires at least: 4.0
-Tested up to: 6.6
+Tested up to: 6.7
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -109,6 +109,9 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 
 == Changelog ==
+
+= 4.2.2 =
+* Fix XSS in the plugin settings.
 
 = 4.2.1 =
 * Fix Content Viewport Width and Content Viewport Height accepts a numeric value followed by the "px" unit to specify pixels.
