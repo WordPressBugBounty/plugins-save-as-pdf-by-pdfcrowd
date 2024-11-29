@@ -547,10 +547,6 @@ input:checked + .save-as-pdf-pdfcrowd-slider:before {
     width: 100%;
 }
 
-.save-as-pdf-pdfcrowd-editable-select input {
-    width: calc(100% - 30px);
-}
-
 .save-as-pdf-pdfcrowd-editable-select .save-as-pdf-pdfcrowd-ed-sel-input-wrap {
     display: none;
     align-items: center;

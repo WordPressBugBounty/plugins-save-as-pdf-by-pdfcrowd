@@ -231,7 +231,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4220',
+        'version' => '4300',
     );
 
     private static $API_OPTIONS = array(
@@ -358,6 +358,8 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'max_loading_time',
         'conversion_config',
         'conversion_config_file',
+        'subprocess_referrer',
+        'converter_user_agent',
         'url',
         'text',
         'file'
@@ -392,6 +394,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             'main_document_css_annotation',
             'header_footer_css_annotation',
             'max_loading_time',
+            'subprocess_referrer',
         ),
         'latest' => array(
             'content_viewport_width',
@@ -456,7 +459,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4220) {
+        if($options['version'] == 4300) {
             return $options;
         }
 
@@ -491,7 +494,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4220;
+        $options['version'] = 4300;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -1247,7 +1250,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.2.2 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.3.0 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1547,6 +1550,15 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         return wp_get_current_user()->user_email;
     }
 
+    private static function create_referrer($url) {
+        $referrer = preg_replace(
+            ['/^(https?:\/\/)[^@]+@/i', '/#.*$/'],
+            ['$1', ''],
+            $url
+        );
+        return $referrer;
+    }
+
     function save_as_pdf_pdfcrowd() {
         // set download cookie at first, so the conversion button
         // can be re-enabled
@@ -1580,6 +1592,8 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                 $options['url'] = $location;
                 $default_conv_mode = 'upload';
             }
+        } else {
+            $location = $options['url'];
         }
 
         // decide conversion mode
@@ -1599,6 +1613,10 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                     wp_die();
                 }
             }
+        }
+
+        if($options['conversion_mode'] != 'url' && $location) {
+            $options['subprocess_referrer'] = self::create_referrer($location);
         }
 
         if($options['license_type'] === 'demo') {

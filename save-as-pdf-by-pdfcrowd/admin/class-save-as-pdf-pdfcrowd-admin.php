@@ -283,7 +283,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
     public function validate($input) {
         $options = get_option($this->plugin_name);
         $valid = $input;
-        $valid['version'] = 4220;
+        $valid['version'] = 4300;
 
         if(isset($input['wp_submit_action'])) {
             if($input['wp_submit_action'] === 'reset') {
@@ -1251,6 +1251,10 @@ class Save_As_Pdf_Pdfcrowd_Admin {
             
         }
         $valid['conversion_config_file'] = isset($input['conversion_config_file']) ? $input['conversion_config_file'] : '';
+
+        $valid['subprocess_referrer'] = isset($input['subprocess_referrer']) ? $input['subprocess_referrer'] : '';
+
+        $valid['converter_user_agent'] = isset($input['converter_user_agent']) ? $input['converter_user_agent'] : '';
 
         if (isset($input['converter_version']) &&
             $input['converter_version'] != '') {

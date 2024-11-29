@@ -110,6 +110,10 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 == Changelog ==
 
+= 4.3.0 =
+* New "Converter User Agent" option.
+* Minor improvement when a Conversion Mode other than URL is used.
+
 = 4.2.2 =
 * Fix XSS in the plugin settings.
 

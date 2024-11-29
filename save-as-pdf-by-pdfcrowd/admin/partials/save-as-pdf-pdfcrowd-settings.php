@@ -334,7 +334,7 @@
                     <option value="medium" <?php selected($content_viewport_width, 'medium');?>>medium</option>
                     <option value="large" <?php selected($content_viewport_width, 'large');?>>large</option>
                     <option value="extra-large" <?php selected($content_viewport_width, 'extra-large');?>>extra-large</option>
-                    <option value="pixel width" <?php selected($content_viewport_width, 'pixel width');?> data-custom="integer_value">pixel width</option>
+                    <option value="pixel width" <?php selected($content_viewport_width, 'pixel width');?> data-custom="number_value">pixel width</option>
                     </select>
                     <div class="save-as-pdf-pdfcrowd-ed-sel-input-wrap">
                     <input type="text"
@@ -371,7 +371,7 @@
                     <option value="" <?php selected($content_viewport_height, '');?>>-- default --</option>
                     <option value="auto" <?php selected($content_viewport_height, 'auto');?>>auto</option>
                     <option value="large" <?php selected($content_viewport_height, 'large');?>>large</option>
-                    <option value="pixel height" <?php selected($content_viewport_height, 'pixel height');?> data-custom="integer_value">pixel height</option>
+                    <option value="pixel height" <?php selected($content_viewport_height, 'pixel height');?> data-custom="number_value">pixel height</option>
                     </select>
                     <div class="save-as-pdf-pdfcrowd-ed-sel-input-wrap">
                     <input type="text"
@@ -3225,6 +3225,42 @@ Dimensions may be empty, 0 or specified in inches "in", millimeters "mm", centim
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>conversion_config_file</strong>"
+                        </div>
+                </td>
+            </tr>
+            <tr class="save-as-pdf-pdfcrowd-set-group save-as-pdf-pdfcrowd-adv-input"
+                data-default="auto">
+                <th scope="row">
+                    <label for="save-as-pdf-pdfcrowd-converter_user_agent">
+                        Converter User Agent
+                    </label>
+                </th>
+                <td>
+                    <div class="save-as-pdf-pdfcrowd-editable-select">
+                    <select id="save-as-pdf-pdfcrowd-converter_user_agent-s-wrap" autocomplete="off">
+                    <option value="auto" <?php selected($converter_user_agent, 'auto');?>>auto</option>
+                    <option value="latest-chrome-desktop" <?php selected($converter_user_agent, 'latest-chrome-desktop');?>>latest-chrome-desktop</option>
+                    <option value="latest-chrome-mobile" <?php selected($converter_user_agent, 'latest-chrome-mobile');?>>latest-chrome-mobile</option>
+                    <option value="custom string" <?php selected($converter_user_agent, 'custom string');?> data-custom="string_value">custom string</option>
+                    </select>
+                    <div class="save-as-pdf-pdfcrowd-ed-sel-input-wrap">
+                    <input type="text"
+                           class="regular-text"
+                           name="save-as-pdf-pdfcrowd[converter_user_agent]"
+                           id="save-as-pdf-pdfcrowd-converter_user_agent"
+                           value="<?php esc_attr_e($converter_user_agent); ?>"
+                           placeholder="Enter custom string"
+                           autocomplete="off">
+                    </div>
+                    </div>
+                        <div class="save-as-pdf-pdfcrowd-description">
+                          <div>
+                            Specifies the User-Agent HTTP header that will be used by the converter when a request is made to the converted web page.
+                          </div>
+                            <br>Possible values: <ul><li>"auto" - The user-agent for desktop chrome corresponding to the converter used.</li><li>"latest-chrome-desktop" - The user-agent of the recently released Chrome browser on desktops.</li><li>"latest-chrome-mobile" - The user-agent of the recently released Chrome browser on mobile devices.</li><li>A custom string for the user agent.</li></ul>
+                        </div>
+                        <div class='save-as-pdf-pdfcrowd-devi'>
+                            Shortcode and function parameter: "<strong>converter_user_agent</strong>"<br>Possible values: "auto", "latest-chrome-desktop", "latest-chrome-mobile", "specific string value"
                         </div>
                 </td>
             </tr>
