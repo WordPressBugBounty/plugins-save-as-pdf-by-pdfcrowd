@@ -1096,7 +1096,7 @@
                         </div>
                 </td>
             </tr>
-            <tr class="save-as-pdf-pdfcrowd-set-group save-as-pdf-pdfcrowd-adv-input"
+            <tr class="save-as-pdf-pdfcrowd-set-group save-as-pdf-pdfcrowd-adv-input save-as-pdf-pdfcrowd-deprecated"
                 data-default="">
                 <th scope="row">
                     <label for="save-as-pdf-pdfcrowd-use_mobile_user_agent">
@@ -3229,7 +3229,7 @@ Dimensions may be empty, 0 or specified in inches "in", millimeters "mm", centim
                 </td>
             </tr>
             <tr class="save-as-pdf-pdfcrowd-set-group save-as-pdf-pdfcrowd-adv-input"
-                data-default="auto">
+                data-default="chrome-desktop">
                 <th scope="row">
                     <label for="save-as-pdf-pdfcrowd-converter_user_agent">
                         Converter User Agent
@@ -3238,7 +3238,8 @@ Dimensions may be empty, 0 or specified in inches "in", millimeters "mm", centim
                 <td>
                     <div class="save-as-pdf-pdfcrowd-editable-select">
                     <select id="save-as-pdf-pdfcrowd-converter_user_agent-s-wrap" autocomplete="off">
-                    <option value="auto" <?php selected($converter_user_agent, 'auto');?>>auto</option>
+                    <option value="chrome-desktop" <?php selected($converter_user_agent, 'chrome-desktop');?>>chrome-desktop</option>
+                    <option value="chrome-mobile" <?php selected($converter_user_agent, 'chrome-mobile');?>>chrome-mobile</option>
                     <option value="latest-chrome-desktop" <?php selected($converter_user_agent, 'latest-chrome-desktop');?>>latest-chrome-desktop</option>
                     <option value="latest-chrome-mobile" <?php selected($converter_user_agent, 'latest-chrome-mobile');?>>latest-chrome-mobile</option>
                     <option value="custom string" <?php selected($converter_user_agent, 'custom string');?> data-custom="string_value">custom string</option>
@@ -3257,10 +3258,10 @@ Dimensions may be empty, 0 or specified in inches "in", millimeters "mm", centim
                           <div>
                             Specifies the User-Agent HTTP header that will be used by the converter when a request is made to the converted web page.
                           </div>
-                            <br>Possible values: <ul><li>"auto" - The user-agent for desktop chrome corresponding to the converter used.</li><li>"latest-chrome-desktop" - The user-agent of the recently released Chrome browser on desktops.</li><li>"latest-chrome-mobile" - The user-agent of the recently released Chrome browser on mobile devices.</li><li>A custom string for the user agent.</li></ul>
+                            <br>Possible values: <ul><li>"chrome-desktop" - The user-agent for desktop chrome corresponding to the converter used.</li><li>"chrome-mobile" - The user-agent for mobile chrome corresponding to the converter used.</li><li>"latest-chrome-desktop" - The user-agent of the recently released Chrome browser on desktops.</li><li>"latest-chrome-mobile" - The user-agent of the recently released Chrome browser on mobile devices.</li><li>A custom string for the user agent.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
-                            Shortcode and function parameter: "<strong>converter_user_agent</strong>"<br>Possible values: "auto", "latest-chrome-desktop", "latest-chrome-mobile", "specific string value"
+                            Shortcode and function parameter: "<strong>converter_user_agent</strong>"<br>Possible values: "chrome-desktop", "chrome-mobile", "latest-chrome-desktop", "latest-chrome-mobile", "specific string value"
                         </div>
                 </td>
             </tr>

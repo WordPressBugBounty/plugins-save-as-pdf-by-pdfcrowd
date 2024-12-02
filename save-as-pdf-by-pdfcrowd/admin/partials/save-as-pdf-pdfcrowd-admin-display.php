@@ -36,7 +36,7 @@
           <h1>
             <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTkuMjI3IiBoZWlnaHQ9IjQzLjI1NiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC03My44MDIgLTM4Ni4wNikiPjxnIHRyYW5zZm9ybT0ibWF0cml4KDEuNzk0OCAwIDAgMS43OTQ4IC0yNjI2LjUgLTIxMi4wNikiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2ZmOTUwMCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBhdGggZD0ibTE1MTQuNSAzMzUuODZjMC40NDI2IDAuMDU0IDEuMjM2Ni0wLjI0MzM2IDEuMDAwMiAwLjQ4OTY1djE4LjUxMWMtMC40NDI2LTAuMDU0LTEuMjM2NiAwLjI0MzM3LTEuMDAwMi0wLjQ4OTY1di0xOC41MTF6IiBvcGFjaXR5PSIuOTkiIHN0cm9rZS13aWR0aD0iNC45OTk4Ii8+PHBhdGggZD0ibTE1MDYuMyAzNDQuNTRoMS40NzQ4djEwLjU1NWgtMS40NzQ4di0xMC41NTV6IiBvcGFjaXR5PSIuOTkiIHN0cm9rZS13aWR0aD0iNC41MjUxIi8+PHBhdGggZD0ibTE1MjIuNCAzMzkuNzhjMC4zNzU1IDAuMTIzMSAxLjI5ODYtMC4zMDEzMyAxLjE2OTQgMC4zMjY0M3YxNC44NDNjLTAuMzc1NS0wLjEyMzExLTEuMjk4NiAwLjMwMTMzLTEuMTY5NC0wLjMyNjQzdi0xNC44NDN6IiBvcGFjaXR5PSIuOTkiIHN0cm9rZS13aWR0aD0iNC44MzA2Ii8+PHBhdGggZD0ibTE1MzUuMSAzNTMuMjh2Mi4xNjQ5aC01LjE2NDl2LTIuMTY0OWg1LjE2NDl6IiBvcGFjaXR5PSIuOTkiIHN0cm9rZS13aWR0aD0iMy44MzUxIi8+PC9nPjwvZz48L3N2Zz4K" style="height: 24px;"/>
             <?php esc_html_e( get_admin_page_title() ); ?>
-            <span id="save-as-pdf-pdfcrowd-version">v4.3.0</span>
+            <span id="save-as-pdf-pdfcrowd-version">v4.3.1</span>
           </h1>
 
           <div id="save-as-pdf-pdfcrowd-sticky">
@@ -148,6 +148,7 @@
                $button_user_drawings = isset($options['button_user_drawings']) ? $options['button_user_drawings'] : '';
                $content_viewport_height = isset($options['content_viewport_height']) ? $options['content_viewport_height'] : '';
                $conversion_mode = isset($options['conversion_mode']) ? $options['conversion_mode'] : '';
+               $converter_user_agent = isset($options['converter_user_agent']) ? $options['converter_user_agent'] : '';
                $converter_version = isset($options['converter_version']) ? $options['converter_version'] : '';
                $custom_data = isset($options['custom_data']) ? $options['custom_data'] : '';
                $dev_mode = isset($options['dev_mode']) ? $options['dev_mode'] : '';
@@ -294,7 +295,6 @@
                  $conversion_config = isset($options['conversion_config']) ? $options['conversion_config'] : '';
                  $conversion_config_file = isset($options['conversion_config_file']) ? $options['conversion_config_file'] : '';
                  $subprocess_referrer = isset($options['subprocess_referrer']) ? $options['subprocess_referrer'] : '';
-                 $converter_user_agent = isset($options['converter_user_agent']) ? $options['converter_user_agent'] : 'auto';
                  $use_http = isset($options['use_http']) ? $options['use_http'] : '';
                  $retry_count = isset($options['retry_count']) ? $options['retry_count'] : '';
 
