@@ -232,7 +232,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4310',
+        'version' => '4400',
     );
 
     private static $API_OPTIONS = array(
@@ -460,7 +460,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4310) {
+        if($options['version'] == 4400) {
             return $options;
         }
 
@@ -495,7 +495,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4310;
+        $options['version'] = 4400;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -850,7 +850,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         if($custom_options) {
             $custom_options['pflags'] = $pflags;
             $custom_options = $this->encrypt(
-                serialize($custom_options), $options['api_key']);
+                json_encode($custom_options), $options['api_key']);
         } else {
             $custom_options = '';
         }
@@ -1251,7 +1251,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.3.1 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.4.0 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1578,7 +1578,11 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                     $this->plugin_name);
                 wp_die();
             }
-            $custom_options = unserialize($decrypted);
+            $custom_options = json_decode($decrypted);
+            if($custom_options === null) {
+                error_log('Pdfcrowd: cached page, recommendation: clear cache');
+                $custom_options = unserialize($decrypted);
+            }
             $options = wp_parse_args($custom_options, $options);
         }
 

@@ -110,6 +110,9 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 == Changelog ==
 
+= 4.4.0 =
+* Fix PHP object injection vulnerability when processing custom data.
+
 = 4.3.1 =
 * Rename the "auto" value to "chrome-desktop" in the "Converter User Agent" option.
 * New a "chrome-mobile" value for the "Converter User Agent" option.
