@@ -110,6 +110,9 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 == Changelog ==
 
+= 4.4.1 =
+* Drop support for PHP native data serialization.
+
 = 4.4.0 =
 * Fix PHP object injection vulnerability when processing custom data.
 
