@@ -112,7 +112,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the output page width. The safe maximum is <span class='field-value'>200in</span> otherwise some PDF viewers may be unable to open the PDF.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -138,7 +138,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the output page height. Use <span class='field-value'>-1</span> for a single page PDF. The safe maximum is <span class='field-value'>200in</span> otherwise some PDF viewers may be unable to open the PDF.
-                              The value must be -1 or specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be -1 or specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -187,7 +187,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the output page top margin.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -213,7 +213,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the output page right margin.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -239,7 +239,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the output page bottom margin.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -265,7 +265,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the output page left margin.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -310,7 +310,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the page range to print.
-                              A comma separated list of page numbers or ranges. Special strings may be used, such as `odd`, `even` and `last`.
+                              A comma separated list of page numbers or ranges. Special strings may be used, such as 'odd', 'even' and 'last'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -490,7 +490,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Load an HTML code from the specified URL and use it as the page header. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><span class='field-value'>pdfcrowd-page-count</span> - the total page count of printed pages</li> <li><span class='field-value'>pdfcrowd-page-number</span> - the current page number</li> <li><span class='field-value'>pdfcrowd-source-url</span> - the source URL of the converted document</li> <li><span class='field-value'>pdfcrowd-source-title</span> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><span class='field-value'>data-pdfcrowd-number-format</span> - specifies the type of the used numerals. Allowed values: <ul> <li><span class='field-value'>arabic</span> - Arabic numerals, they are used by default</li> <li><span class='field-value'>roman</span> - Roman numerals</li> <li><span class='field-value'>eastern-arabic</span> - Eastern Arabic numerals</li> <li><span class='field-value'>bengali</span> - Bengali numerals</li> <li><span class='field-value'>devanagari</span> - Devanagari numerals</li> <li><span class='field-value'>thai</span> - Thai numerals</li> <li><span class='field-value'>east-asia</span> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><span class='field-value'>chinese-formal</span> - Chinese formal numerals</li> </ul> Please contact us if you need another type of numerals.<br> Example:<br> &lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt; </li> <li><span class='field-value'>data-pdfcrowd-placement</span> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: &lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;<br> will produce &lt;span&gt;http://example.com&lt;/span&gt; </li> </ul> </li> <li><span class='field-value'>href</span> - the URL is set to the href attribute <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;Link to source&lt;/a&gt; </li> </ul> </li> <li><span class='field-value'>href-and-content</span> - the URL is set to the href attribute and to the content <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt; </li> </ul> </li> </ul> </li> </ul>
-                              The supported protocols are http:// and https://.
+                              Supported protocols are http:// and https://.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -539,7 +539,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the header height.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -565,7 +565,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Load an HTML code from the specified URL and use it as the page footer. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><span class='field-value'>pdfcrowd-page-count</span> - the total page count of printed pages</li> <li><span class='field-value'>pdfcrowd-page-number</span> - the current page number</li> <li><span class='field-value'>pdfcrowd-source-url</span> - the source URL of the converted document</li> <li><span class='field-value'>pdfcrowd-source-title</span> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><span class='field-value'>data-pdfcrowd-number-format</span> - specifies the type of the used numerals. Allowed values: <ul> <li><span class='field-value'>arabic</span> - Arabic numerals, they are used by default</li> <li><span class='field-value'>roman</span> - Roman numerals</li> <li><span class='field-value'>eastern-arabic</span> - Eastern Arabic numerals</li> <li><span class='field-value'>bengali</span> - Bengali numerals</li> <li><span class='field-value'>devanagari</span> - Devanagari numerals</li> <li><span class='field-value'>thai</span> - Thai numerals</li> <li><span class='field-value'>east-asia</span> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><span class='field-value'>chinese-formal</span> - Chinese formal numerals</li> </ul> Please contact us if you need another type of numerals.<br> Example:<br> &lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt; </li> <li><span class='field-value'>data-pdfcrowd-placement</span> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: &lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;<br> will produce &lt;span&gt;http://example.com&lt;/span&gt; </li> </ul> </li> <li><span class='field-value'>href</span> - the URL is set to the href attribute <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;Link to source&lt;/a&gt; </li> </ul> </li> <li><span class='field-value'>href-and-content</span> - the URL is set to the href attribute and to the content <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt; </li> </ul> </li> </ul> </li> </ul>
-                              The supported protocols are http:// and https://.
+                              Supported protocols are http:// and https://.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -614,7 +614,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the footer height.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -799,7 +799,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Load a file from the specified URL and apply the file as a watermark to each page of the output PDF. A watermark can be either a PDF or an image. If a multi-page file (PDF or TIFF) is used, the first page is used as the watermark.
-                              The supported protocols are http:// and https://.
+                              Supported protocols are http:// and https://.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -851,7 +851,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Load a file from the specified URL and apply each page of the file as a watermark to the corresponding page of the output PDF. A watermark can be either a PDF or an image.
-                              The supported protocols are http:// and https://.
+                              Supported protocols are http:// and https://.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -903,7 +903,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Load a file from the specified URL and apply the file as a background to each page of the output PDF. A background can be either a PDF or an image. If a multi-page file (PDF or TIFF) is used, the first page is used as the background.
-                              The supported protocols are http:// and https://.
+                              Supported protocols are http:// and https://.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -955,7 +955,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Load a file from the specified URL and apply each page of the file as a background to the corresponding page of the output PDF. A background can be either a PDF or an image.
-                              The supported protocols are http:// and https://.
+                              Supported protocols are http:// and https://.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2856,7 +2856,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the top left X coordinate of the content area. It is relative to the top left X coordinate of the print area.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt". It may contain a negative value.
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'. It may contain a negative value.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2882,7 +2882,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the top left Y coordinate of the content area. It is relative to the top left Y coordinate of the print area.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt". It may contain a negative value.
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'. It may contain a negative value.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2908,7 +2908,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the width of the content area. It should be at least 1 inch.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2934,7 +2934,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             Set the height of the content area. It should be at least 1 inch.
-                              The value must be specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+                              The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -3191,7 +3191,7 @@ The structure of the JSON must be:
 </ul>
 
 <p>
-Dimensions may be empty, 0 or specified in inches "in", millimeters "mm", centimeters "cm", pixels "px", or points "pt".
+Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
 </p>
 
                               

@@ -232,7 +232,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4410',
+        'version' => '4500',
     );
 
     private static $API_OPTIONS = array(
@@ -413,21 +413,21 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
     );
 
     private static $ERROR_MESSAGES = array(
-        400 => "The client sent an invalid request.",
+        400 => "The client sent an invalid request. Refer to the reason code for more information.",
         401 => "Authentication credentials were not provided or the API license is not active.",
         403 => "The API service is suspended or there are no credits left.",
         405 => "The method specified in the request is not allowed. The request method must be POST.",
-        413 => "<p>The upload size limit is 300MB.</p> <p>You can zip uploaded HTML to avoid this error.</p>",
-        429 => "<p>The client has sent too many requests within a certain timeframe (rate limiting).</p> <p>Upgrade to a higher Pdfcrowd API plan to avoid this error.</p>",
-        430 => "<p>The client has sent too many concurrent requests at a time.</p> <p>Upgrade to a higher Pdfcrowd API plan to avoid this error.</p>",
-        432 => "<p>The limit for the demo license has been exceeded.</p> <p>Use your personal Pdfcrowd API credentials.</p>",
+        413 => "The upload size limit is 300MB. You can zip uploaded HTML to avoid this error.",
+        429 => "The client has sent too many requests within a certain timeframe (rate limiting). Upgrade to a higher PDFCrowd API plan to avoid this error.",
+        430 => "The client has sent too many concurrent requests at a time. Upgrade to a higher PDFCrowd API plan to avoid this error.",
+        432 => "The limit for the demo license has been exceeded. Use your personal PDFCrowd API credentials.",
         452 => "There is no input specified to be converted.",
         453 => "Unknown conversion option. See details in the HTTP response body.",
         454 => "The input is too complex or large. It can not be converted. Try to simplify the input data.",
         455 => "The conversion can not be completed due to a system error.",
         456 => "The input file is not specified correctly. Multipart/form-data is required for file upload.",
         457 => "The type of the input file is unknown. The file has no extension.",
-        458 => "<p>The request was aborted because it took a long time.</p> <p>The typical cause of this error is too many images in an HTML page that take too long to download. Another cause might be a long running JavaScript.</p> <p>Try to simplify your input data or speed up the page load time.</p>",
+        458 => "The request was aborted because it took a long time. The typical cause of this error is too many images in an HTML page that take too long to download. Another cause might be a long running JavaScript. Try to simplify your input data or speed up the page load time.",
         459 => "The uploaded archive can not be processed. It is too large, corrupted or contains symbolic links.",
         470 => "A conversion option is set to an invalid value.",
         471 => "The input URL can not be loaded.",
@@ -440,7 +440,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         478 => "The URL hostname could not be resolved.",
         479 => "The URL is invalid.",
         480 => "The converter could not establish an HTTPS connection because of an invalid SSL certificate.",
-        481 => "<p>There was a problem connecting to Pdfcrowd servers over HTTPS. This could be caused by several reasons, one of them is that your local CA certificate store is out of date or not configured correctly.</p> <p>An alternative is to use the API over HTTP. The HTTP mode can be enabled by the <a href='/api/method-index/#html_to_pdf_set_use_http'>setUseHttp</a> method.<p>",
+        481 => "There was a problem connecting to PDFCrowd servers over HTTPS. This could be caused by several reasons, one of them is that your local CA certificate store is out of date or not configured correctly. An alternative is to use the API over HTTP. The HTTP mode can be enabled by the <a href='/api/method-index/#html_to_pdf_set_use_http'>setUseHttp</a> method.",
         482 => "The input template or data is invalid.",
         483 => "The input is password protected. Provide a valid password.",
         484 => "The input contains an unsupported feature, typically a font type.",
@@ -460,7 +460,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4410) {
+        if($options['version'] == 4500) {
             return $options;
         }
 
@@ -495,7 +495,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4410;
+        $options['version'] = 4500;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -954,18 +954,18 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $msg = '';
         if(is_wp_error($response)) {
             $msg = $response->get_error_message() . ' ' . $url;
-            error_log("Pdfcrowd: failed to get URL {$url}. " . $msg);
+            error_log("PDFCrowd: failed to get URL {$url}. " . $msg);
             if($throw_error) {
                 if(empty($options['error_page'])) {
                     $msg = self::prepare_error_message(
-                        471,
+                        312,
                         esc_html($msg),
                         '<b>"URL" or "Content"</b>') .
                          '<p>Or check your network and PHP configuration.</p>';
                 } else {
                     $msg .= ' Please, check your network.';
                 }
-                return new WP_Error(471, $msg);
+                return new WP_Error(400, $msg);
             }
             return '';
         }
@@ -974,14 +974,14 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
             $status_code = wp_remote_retrieve_response_code($response);
             if($status_code && $status_code >= 400) {
                 if(empty($options['error_page'])) {
-                    $msg = self::prepare_error_message(473, 'URL Load Error') .
+                    $msg = self::prepare_error_message(314, 'URL Load Error') .
                          "<p>Failed url is <a href='$url'>$url</a> with status $status_code.</p>" .
                          '<h3>Response</h3><div style="background-color: #eee">' . wp_remote_retrieve_body($response) .
                          '</div>';
                 } else {
                     $msg = "URL Load Error $status_code: $url";
                 }
-                return new WP_Error(473, $msg);
+                return new WP_Error(400, $msg);
             }
         }
         return wp_remote_retrieve_body($response);
@@ -1251,7 +1251,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.4.1 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.0 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1347,19 +1347,29 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
     }
 
     private static function prepare_error_message($code, $text, $cmode = null) {
-        $details = isset(self::$ERROR_MESSAGES[$code]) ?
-                 '<p>' . self::$ERROR_MESSAGES[$code] . '</p>' : '';
-        $text = $details . '<p>' . $text . '</p>';
-        switch($code) {
-        case 471:
-        case 478:
+        $reasonCode = '';
+        $pattern = '/^(\d+)\.(\d+)\s+-\s+(.*?)(?:\s+Documentation link:\s+(.*))?$/';
+        if(preg_match($pattern, $text, $matches)) {
+            $code = $matches[1];
+            $message = '<p>Reason Code: ' . $matches[2] . '</p>' .
+                '<p>' . $matches[3] . '</p>';
+            if(isset($matches[4])) {
+                $docLink = str_replace(
+                    'api/html-to-pdf-http',
+                    'save-as-pdf-wordpress-plugin',
+                    $matches[4]);
+                $message .= "<p>More: <a href='{$docLink}'>{$docLink}</a>.</p>";
+            }
+            $text = $message;
+        } else {
+            $details = isset(self::$ERROR_MESSAGES[$code]) ?
+                '<p>' . self::$ERROR_MESSAGES[$code] . '</p>' : '';
+            $text = $details . '<p>' . $text . '</p>';
+        }
+
+        if(in_array($code, [312, 319, 320], true)) {
             $text = $text . '<p>Set <b>"Conversion Mode"</b> to ' .
                   $cmode . ' on the <b>Mode</b> settings page of the "Save as PDF by Pdfcrowd" plugin.</p>';
-            break;
-        default:
-            $text = preg_replace(
-                '/Details:\s(https:\/\/www.pdfcrowd.com\/[^\s<]*)/s',
-                '<br>More: <a href="$1">$1</a>', $text);
         }
         return $text;
     }
@@ -1715,8 +1725,8 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
     <p>Please try again later.</p>
     {$back}
     <div class="save-as-pdf-pdfcrowd-err-admin" style="margin-top: 2em">
-    <h2>Details for Administrator</h2>
-    <p>Code: {$code}</p>
+    <h2>Error Details</h2>
+    <p>Status Code: {$code}</p>
     <p>{$message}</p>
     </div>
     </body>
