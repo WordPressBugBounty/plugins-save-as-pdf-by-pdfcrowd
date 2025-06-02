@@ -110,6 +110,10 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 == Changelog ==
 
+= 4.5.1 =
+* Fix CloudFlare issue by changing the default converter user agend.
+* Unused error description removed.
+
 = 4.5.0 =
 * Error messages update.
 

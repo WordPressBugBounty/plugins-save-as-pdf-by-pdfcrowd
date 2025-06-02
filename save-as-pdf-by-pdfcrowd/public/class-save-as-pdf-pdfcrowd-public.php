@@ -204,7 +204,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'button_user_drawings' => '0',
         'content_viewport_height' => 'large',
         'conversion_mode' => 'url',
-        'converter_user_agent' => 'chrome-desktop',
+        'converter_user_agent' => 'latest-chrome-desktop',
         'converter_version' => '24.04',
         'custom_data' => '',
         'dev_mode' => '0',
@@ -232,7 +232,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4500',
+        'version' => '4510',
     );
 
     private static $API_OPTIONS = array(
@@ -416,7 +416,6 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         400 => "The client sent an invalid request. Refer to the reason code for more information.",
         401 => "Authentication credentials were not provided or the API license is not active.",
         403 => "The API service is suspended or there are no credits left.",
-        405 => "The method specified in the request is not allowed. The request method must be POST.",
         413 => "The upload size limit is 300MB. You can zip uploaded HTML to avoid this error.",
         429 => "The client has sent too many requests within a certain timeframe (rate limiting). Upgrade to a higher PDFCrowd API plan to avoid this error.",
         430 => "The client has sent too many concurrent requests at a time. Upgrade to a higher PDFCrowd API plan to avoid this error.",
@@ -460,7 +459,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4500) {
+        if($options['version'] == 4510) {
             return $options;
         }
 
@@ -495,7 +494,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4500;
+        $options['version'] = 4510;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -1251,7 +1250,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.0 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.1 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 

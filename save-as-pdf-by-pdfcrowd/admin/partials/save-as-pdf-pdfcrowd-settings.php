@@ -3229,7 +3229,7 @@ Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centim
                 </td>
             </tr>
             <tr class="save-as-pdf-pdfcrowd-set-group save-as-pdf-pdfcrowd-adv-input"
-                data-default="chrome-desktop">
+                data-default="latest-chrome-desktop">
                 <th scope="row">
                     <label for="save-as-pdf-pdfcrowd-converter_user_agent">
                         Converter User Agent
