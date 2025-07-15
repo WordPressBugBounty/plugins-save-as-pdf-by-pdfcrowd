@@ -15,7 +15,7 @@
  *
  * @package    Save_As_Pdf_Pdfcrowd
  * @subpackage Save_As_Pdf_Pdfcrowd/admin
- * @author     Pdfcrowd <support@pdfcrowd.com>
+ * @author     PDFCrowd <support@pdfcrowd.com>
  */
 class Save_As_Pdf_Pdfcrowd_Admin {
 
@@ -174,7 +174,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
     }
 
     /**
-    * Get status of the Pdfcrowd API license.
+    * Get status of the PDFCrowd license.
     *
     * @since    1.0.0
     */
@@ -283,7 +283,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
     public function validate($input) {
         $options = get_option($this->plugin_name);
         $valid = $input;
-        $valid['version'] = 4510;
+        $valid['version'] = 4520;
 
         if(isset($input['wp_submit_action'])) {
             if($input['wp_submit_action'] === 'reset') {
@@ -327,14 +327,14 @@ class Save_As_Pdf_Pdfcrowd_Admin {
                     add_settings_error(
                         'api_key',
                         'empty_api_key',
-                        'API key can not be empty.');
+                        'key can not be empty.');
                 } else if(!preg_match("/^[a-f0-9]{32}$/", $valid['api_key'])) {
                     add_settings_error(
                         'api_key',
                         'invalid_api_key',
                         pdfcrowd_create_invalid_value_message(
                             $valid['api_key'],
-                            'API key',
+                            'key',
                             'Must be 32-characters long and have only letters a-f and numbers.'));
                 }
                 break;

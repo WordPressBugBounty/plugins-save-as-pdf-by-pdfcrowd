@@ -18,7 +18,7 @@
  *
  * @package    Save_As_Pdf_Pdfcrowd
  * @subpackage Save_As_Pdf_Pdfcrowd/public
- * @author     Pdfcrowd <support@pdfcrowd.com>
+ * @author     PDFCrowd <support@pdfcrowd.com>
  */
 class Save_As_Pdf_Pdfcrowd_Public {
 
@@ -232,7 +232,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4510',
+        'version' => '4520',
     );
 
     private static $API_OPTIONS = array(
@@ -414,7 +414,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
 
     private static $ERROR_MESSAGES = array(
         400 => "The client sent an invalid request. Refer to the reason code for more information.",
-        401 => "Authentication credentials were not provided or the API license is not active.",
+        401 => "Authentication credentials were not provided or the PDFCrowd license is not active.",
         403 => "The API service is suspended or there are no credits left.",
         413 => "The upload size limit is 300MB. You can zip uploaded HTML to avoid this error.",
         429 => "The client has sent too many requests within a certain timeframe (rate limiting). Upgrade to a higher PDFCrowd API plan to avoid this error.",
@@ -459,7 +459,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4510) {
+        if($options['version'] == 4520) {
             return $options;
         }
 
@@ -494,7 +494,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4510;
+        $options['version'] = 4520;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -749,7 +749,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
             return '';
         }
 
-        $diag = '<div class="save-as-pdf-pdfcrowd-diag"><h3>Pdfcrowd Diagnostics</h3>';
+        $diag = '<div class="save-as-pdf-pdfcrowd-diag"><h3>PDFCrowd Diagnostics</h3>';
 
         if(!empty($custom_options['api_key'])) {
             $custom_options['api_key'] = '- secret -';
@@ -1226,7 +1226,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
             ) {
                 $files[$key] = $value;
             } else {
-                // use only valid Pdfcrowd options
+                // use only valid PDFCrowd options
                 $fields[$key] = $value;
             }
         }
@@ -1250,7 +1250,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.1 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.2 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1293,7 +1293,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                 // wait in case of the concurrency limit for 30 seconds
                 if($retry_attempt <= 15 && ($code == 430 || $code == 429)) {
                     // give time to finish the previous conversion
-                    error_log("concurrency limit reached, attempt {$retry_attempt}/15, waiting, a higher Pdfcrowd API plan is recommended");
+                    error_log("concurrency limit reached, attempt {$retry_attempt}/15, waiting, a higher PDFCrowd plan is recommended");
                     sleep(2);
                     $retry_attempt++;
                     continue;
@@ -1368,7 +1368,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
 
         if(in_array($code, [312, 319, 320], true)) {
             $text = $text . '<p>Set <b>"Conversion Mode"</b> to ' .
-                  $cmode . ' on the <b>Mode</b> settings page of the "Save as PDF by Pdfcrowd" plugin.</p>';
+                  $cmode . ' on the <b>Mode</b> settings page of the "Save as PDF by PDFCrowd" plugin.</p>';
         }
         return $text;
     }
@@ -1420,7 +1420,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         // check if the location is from my domain
         if(parse_url($location, PHP_URL_HOST) !=
            parse_url($permalink, PHP_URL_HOST)) {
-            error_log('Pdfcrowd: conflict in location URL ' . $location . ' vs ' . $permalink);
+            error_log('PDFCrowd: conflict in location URL ' . $location . ' vs ' . $permalink);
             return $permalink;
         }
 
@@ -1431,7 +1431,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
     private static function delete_file($file_path) {
         global $wp_filesystem;
         if(!$wp_filesystem->delete($file_path)) {
-            error_log('Pdfcrowd: can not delete file ' . $file_path);
+            error_log('PDFCrowd: can not delete file ' . $file_path);
         }
     }
 
@@ -1445,7 +1445,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
 
         $upload_dir = wp_upload_dir();
         if(empty($upload_dir['basedir'])) {
-            error_log('Pdfcrowd: no upload dir specified');
+            error_log('PDFCrowd: no upload dir specified');
             return false;
         }
 
@@ -1454,7 +1454,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         if(!$wp_filesystem->exists($tmp_dir)) {
             // make temporary folder
             if(!$wp_filesystem->mkdir($tmp_dir)) {
-                error_log('Pdfcrowd: can not create folder ' . $tmp_dir);
+                error_log('PDFCrowd: can not create folder ' . $tmp_dir);
             }
         }
 
@@ -1467,13 +1467,13 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                 return self::make_temporary_file(
                     $file_name, $content, wp_generate_password(6, false) . '_');
             }
-            error_log('Pdfcrowd: can not save file ' . $file_path);
+            error_log('PDFCrowd: can not save file ' . $file_path);
             return false;
         }
         fclose($fp);
 
         if(!$wp_filesystem->put_contents($file_path, $content)) {
-            error_log('Pdfcrowd: can not write to file ' . $file_path);
+            error_log('PDFCrowd: can not write to file ' . $file_path);
             self::delete_file($file_path);
             return false;
         }
@@ -1539,7 +1539,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                     $message,
                     $headers,
                     array($tmp_file_name))) {
-            error_log('Pdfcrowd: send failed to ' . $email_to);
+            error_log('PDFCrowd: send failed to ' . $email_to);
             self::delete_file($tmp_file_name);
             self::send_json_error(455, __('Mail system error.', $plugin_name));
         } else {

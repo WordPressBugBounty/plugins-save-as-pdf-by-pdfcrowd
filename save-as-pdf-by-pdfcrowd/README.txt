@@ -1,5 +1,5 @@
-=== Save as PDF Plugin by Pdfcrowd ===
-Contributors: Pdfcrowd
+=== Save as PDF Plugin by PDFCrowd ===
+Contributors: PDFCrowd
 Tags: pdf conversion, web to pdf, content export, pdf widget, printable content
 Requires PHP: 5.1
 Requires at least: 4.0
@@ -40,11 +40,11 @@ The plugin offers various customization options accessible through the WordPress
 
 == Licensing ==
 
-By default, the plugin operates in demo mode, which, while fully functional, adds a watermark and Pdfcrowd branding to the content.
+By default, the plugin operates in demo mode, which, while fully functional, adds a watermark and PDFCrowd branding to the content.
 
-To remove the demo watermark and Pdfcrowd branding, you can purchase an [API license](https://pdfcrowd.com/pricing/api/?api=v2&ref=wordpress). Activate the license by entering your Pdfcrowd username and API key in the plugin settings under the License tab.
+To remove the demo watermark and PDFCrowd branding, you can purchase an [PDFCrowd license](https://pdfcrowd.com/pricing/api/?api=v2&ref=wordpress). Activate the license by entering your PDFCrowd username and key in the plugin settings under the License tab.
 
-A Pdfcrowd API license is versatile, allowing use across multiple WordPress websites for our [plugins](https://pdfcrowd.com/save-as-pdf-image-wordpress-plugin/). Additionally, the API license grants direct access to the [Pdfcrowd API](https://pdfcrowd.com/api/) for a broader range of applications.
+A PDFCrowd license is versatile, allowing use across multiple WordPress websites for our [plugins](https://pdfcrowd.com/save-as-pdf-image-wordpress-plugin/). Additionally, the license grants direct access to the [PDFCrowd API](https://pdfcrowd.com/api/) for a broader range of applications.
 
 
 == Basic Troubleshooting ==
@@ -68,7 +68,7 @@ Plugin links:
 
 == About us ==
 
-The plugin is provided by [Pdfcrowd](https://pdfcrowd.com/), established in 2009 as a pioneer in the field of online conversion services. Over the years, we have served hundreds of thousands of users worldwide, constantly evolving our technology to meet the needs of our customers.
+The plugin is provided by [PDFCrowd](https://pdfcrowd.com/), established in 2009 as a pioneer in the field of online conversion services. Over the years, we have served hundreds of thousands of users worldwide, constantly evolving our technology to meet the needs of our customers.
 
 
 == Installation ==
@@ -84,19 +84,19 @@ The plugin is provided by [Pdfcrowd](https://pdfcrowd.com/), established in 2009
 
 = How can I activate the license? =
 
-1. Purchase an [API license plan](https://pdfcrowd.com/pricing/api/?api=v2&ref=wordpress) that matches your usage level.
-2. Activate the license by entering your Pdfcrowd username and API key in the "License" tab of the plugin settings.
+1. Purchase an [PDFCrowd license plan](https://pdfcrowd.com/pricing/api/?api=v2&ref=wordpress) that matches your usage level.
+2. Activate the license by entering your PDFCrowd username and key in the "License" tab of the plugin settings.
 
 = How does the plugin work? =
 
-The plugin operates by leveraging the Pdfcrowd [HTML to PDF API](https://pdfcrowd.com/api/html-to-pdf-api/), a service that runs entirely in the cloud. This means that when you use the plugin to convert a web page into a PDF, the conversion process is handled on Pdfcrowd's servers, not on your server or device. This approach has several benefits:
+The plugin operates by leveraging the PDFCrowd [HTML to PDF API](https://pdfcrowd.com/api/html-to-pdf-api/), a service that runs entirely in the cloud. This means that when you use the plugin to convert a web page into a PDF, the conversion process is handled on PDFCrowd's servers, not on your server or device. This approach has several benefits:
 
 * **Performance:** Offloading the conversion process to the cloud means that it doesn't consume your server's resources, ensuring your website's performance remains unaffected.
 * **Scalability:** Cloud-based conversion can easily handle spikes in demand without any degradation in service, making it ideal for websites of any size.
-* **Reliability:** Pdfcrowd's servers are optimized for high availability and reliability, ensuring your conversion needs are met with consistent quality.
+* **Reliability:** PDFCrowd's servers are optimized for high availability and reliability, ensuring your conversion needs are met with consistent quality.
 
 
-In essence, the plugin sends a request to the Pdfcrowd API with either the URL or the HTML content of the page you wish to convert. The API then processes this request, converts the page into a PDF, and returns the PDF file. This streamlined, cloud-based approach makes adding PDF functionality to your WordPress site both efficient and effective.
+In essence, the plugin sends a request to the PDFCrowd API with either the URL or the HTML content of the page you wish to convert. The API then processes this request, converts the page into a PDF, and returns the PDF file. This streamlined, cloud-based approach makes adding PDF functionality to your WordPress site both efficient and effective.
 
 = Where can I find more information about the plugin? =
 
@@ -109,6 +109,9 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 
 
 == Changelog ==
+
+= 4.5.2 =
+* Renamed Pdfcrowd to PDFCrowd and other minor documentation changes.
 
 = 4.5.1 =
 * Fix CloudFlare issue by changing the default converter user agend.
@@ -160,10 +163,10 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 * New value "24.04" for the "Converter Version" option allows you to try a beta version of the new converter.
 
 = 3.3.1 =
-* Minor: Added a link to instructions for resolving an issue with the API license in the plugin settings.
+* Minor: Added a link to instructions for resolving an issue with the PDFCrowd license in the plugin settings.
 
 = 3.3.0 =
-* New: Show the API license error on the plugins dashboard and in the plugin details if this error occurs.
+* New: Show the PDFCrowd license error on the plugins dashboard and in the plugin details if this error occurs.
 * Fix an issue with entering invalid HTML into the button style options.
 
 = 3.2.3 =
@@ -263,7 +266,7 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 * New "Use Mobile User Agent" option to use a mobile user agent for the conversion.
 
 = 2.6.2 =
-* Minor fix - the hyperlinks to the Pdfcrowd API documentation have been updated.
+* Minor fix - the hyperlinks to the PDFCrowd API documentation have been updated.
 
 = 2.6.1 =
 * Minor update in links to the documentation.
@@ -316,7 +319,7 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 * Fixed error in "Send PDF via e-mail"
 
 = 2.0.0 =
-* New "Converter Version" option - specifies the version of the internal Pdfcrowd converter. Details about Pdfcrowd [versioning](https://pdfcrowd.com/api/versioning/).
+* New "Converter Version" option - specifies the version of the internal PDFCrowd converter. Details about PDFCrowd [versioning](https://pdfcrowd.com/api/versioning/).
 * New "Load Iframes" option - specifies how iframes are handled.
 * New "Locale" option - specifies the locale for conversions.
 * New value "Send PDF via e-mail" added to the "Button Click Action" options. It sends the output file via customized e-mail using these settings:
@@ -366,7 +369,7 @@ In essence, the plugin sends a request to the Pdfcrowd API with either the URL o
 = 1.6.0 =
 * Added support for parameters in the page URL.
 * Added support for missing protocol in links.
-* Added function pdfcrowd_save_as_pdf($options). It's useful for acccessing Pdfcrowd API directly.
+* Added function pdfcrowd_save_as_pdf($options). It's useful for acccessing PDFCrowd API directly.
 
 = 1.5.0 =
 * Added HTML template rendering with custom JSON, XML, YAML and CSV data.

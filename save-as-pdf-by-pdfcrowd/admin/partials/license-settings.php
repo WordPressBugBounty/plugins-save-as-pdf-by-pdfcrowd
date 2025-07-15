@@ -1,7 +1,7 @@
 <?php
 
 /**
-* Partial of the API license settings
+* Partial of the PDFCrowd license settings
 *
 *
 *
@@ -24,7 +24,7 @@
                     Demo
                 </span>
             </label>
-             - Places a demo watermark and Pdfcrowd branding on the output.
+             - Places a demo watermark and PDFCrowd branding on the output.
         </div>
         <div>
             <label for="save-as-pdf-pdfcrowd-lic-regular">
@@ -60,14 +60,14 @@
                              id="save-as-pdf-pdfcrowd-username"
                              name="save-as-pdf-pdfcrowd[username]"
                              value="<?php esc_attr_e($username); ?>"
-                             placeholder="<?php esc_attr_e('Your Pdfcrowd username', $this->plugin_name);?>"
+                             placeholder="<?php esc_attr_e('Your PDFCrowd username', $this->plugin_name);?>"
                              autocomplete="off" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <label for="save-as-pdf-pdfcrowd-api_key">
-                            API Key
+                            Key
                         </label>
                     </td>
                     <td>
@@ -76,17 +76,15 @@
                              id="save-as-pdf-pdfcrowd-api_key"
                              name="save-as-pdf-pdfcrowd[api_key]"
                              value="<?php esc_attr_e($api_key); ?>"
-                             placeholder="<?php esc_attr_e('Your Pdfcrowd API key', $this->plugin_name);?>"
+                             placeholder="<?php esc_attr_e('Your PDFCrowd WordPress key', $this->plugin_name);?>"
                              autocomplete="off" />
                     </td>
                 </tr>
                 <tr>
                     <td></td>
                     <td>
-                        You can find your license credentials in your
-                        <a href='https://pdfcrowd.com/user/account/api2-license/?ref=wordpress' target='blank'>
-                            Pdfcrowd account
-                        </a>
+                        You can find the PDFCrowd WordPress key in your
+                        <a href='https://pdfcrowd.com/user/account/wordpress/?ref=wordpress' target='blank'>PDFCrowd account</a>.
                     </td>
                 </tr>
             <?php if($license_status) :?>
@@ -121,7 +119,7 @@
                         <td id="save-as-pdf-pdfcrowd-lic-invalid" colspan=2
                             class="align-center">
                             <div class='attention'>
-                                Error: Entered username or API key is not valid!
+                                Error: Entered username or key is not valid!
                             </div>
                         </td>
                     </tr>

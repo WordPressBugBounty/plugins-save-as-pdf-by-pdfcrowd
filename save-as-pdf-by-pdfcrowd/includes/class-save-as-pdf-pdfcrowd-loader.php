@@ -19,7 +19,7 @@
  *
  * @package    Save_As_Pdf_Pdfcrowd
  * @subpackage Save_As_Pdf_Pdfcrowd/includes
- * @author     Pdfcrowd <support@pdfcrowd.com>
+ * @author     PDFCrowd <support@pdfcrowd.com>
  */
 class Save_As_Pdf_Pdfcrowd_Loader {
 

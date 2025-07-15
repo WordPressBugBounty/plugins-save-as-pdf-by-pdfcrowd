@@ -1279,7 +1279,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set cookies that are sent in Pdfcrowd HTTP requests.
+                            Set HTTP cookies to be included in all requests made by the converter.
                               
                           </div>
                         </div>
@@ -1356,7 +1356,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_xpdfcrowd_header" name="save-as-pdf-pdfcrowd[no_xpdfcrowd_header]" value="1" <?php checked( $no_xpdfcrowd_header, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Do not send the X-Pdfcrowd HTTP header in Pdfcrowd HTTP requests.
+                            Do not send the X-Pdfcrowd HTTP header in PDFCrowd HTTP requests.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1381,7 +1381,7 @@
                           <div>
                             Specifies behavior in presence of CSS @page rules. It may affect the page size, margins and orientation.
                           </div>
-                            <br>Possible values: <ul><li>"default" - The Pdfcrowd API page settings are preferred.</li><li>"mode1" - The converter version 18.10 mode.</li><li>"mode2" - CSS @page rule is preferred.</li></ul>
+                            <br>Possible values: <ul><li>"default" - The PDFCrowd API page settings are preferred.</li><li>"mode1" - The converter version 18.10 mode.</li><li>"mode2" - CSS @page rule is preferred.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>css_page_rule_mode</strong>"<br>Possible values: "default", "mode1", "mode2"
@@ -1474,7 +1474,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set a custom HTTP header that is sent in Pdfcrowd HTTP requests.
+                            Set a custom HTTP header to be included in all requests made by the converter.
                               A string containing the header name and value separated by a colon.
                           </div>
                         </div>
@@ -1500,7 +1500,7 @@
                         placeholder="200" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Wait the specified number of milliseconds to finish all JavaScript after the document is loaded. Your API license defines the maximum wait time by "Max Delay" parameter.
+                            Wait the specified number of milliseconds to finish all JavaScript after the document is loaded. Your license defines the maximum wait time by "Max Delay" parameter.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1525,7 +1525,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Wait for the specified element in a source document. The element is specified by one or more <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'>CSS selectors</a>. The element is searched for in the main document and all iframes. If the element is not found, the conversion fails. Your API license defines the maximum wait time by "Max Delay" parameter.
+                            Wait for the specified element in a source document. The element is specified by one or more <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'>CSS selectors</a>. The element is searched for in the main document and all iframes. If the element is not found, the conversion fails. Your license defines the maximum wait time by "Max Delay" parameter.
                               
                           </div>
                         </div>
@@ -2714,7 +2714,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A proxy server used by Pdfcrowd conversion process for accessing the source URLs with HTTP scheme. It can help to circumvent regional restrictions or provide limited access to your intranet.
+                            A proxy server used by the conversion process for accessing the source URLs with HTTP scheme. It can help to circumvent regional restrictions or provide limited access to your intranet.
                               The value must have format DOMAIN_OR_IP_ADDRESS:PORT.
                           </div>
                         </div>
@@ -2740,7 +2740,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A proxy server used by Pdfcrowd conversion process for accessing the source URLs with HTTPS scheme. It can help to circumvent regional restrictions or provide limited access to your intranet.
+                            A proxy server used by the conversion process for accessing the source URLs with HTTPS scheme. It can help to circumvent regional restrictions or provide limited access to your intranet.
                               The value must have format DOMAIN_OR_IP_ADDRESS:PORT.
                           </div>
                         </div>
@@ -2766,7 +2766,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A client certificate to authenticate Pdfcrowd converter on your web server. The certificate is used for two-way SSL/TLS authentication and adds extra security.
+                            A client certificate to authenticate the converter on your web server. The certificate is used for two-way SSL/TLS authentication and adds extra security.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -3313,7 +3313,7 @@ Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centim
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-use_http" name="save-as-pdf-pdfcrowd[use_http]" value="1" <?php checked( $use_http, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies if the client communicates over HTTP or HTTPS with Pdfcrowd API.
+                            Specify whether to use HTTP or HTTPS when connecting to the PDFCrowd API.
                           </div>
                               <div class='save-as-pdf-pdfcrowd-note'>
                                 <strong>Warning:</strong> Using HTTP is insecure as data sent over HTTP is not encrypted. Enable this option only if you know what you are doing.
