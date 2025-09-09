@@ -110,6 +110,9 @@ In essence, the plugin sends a request to the PDFCrowd API with either the URL o
 
 == Changelog ==
 
+= 4.5.3 =
+* Fixed stored XSS vulnerability in shortcode by sanitizing custom HTML attributes with wp_kses_post().
+
 = 4.5.2 =
 * Renamed Pdfcrowd to PDFCrowd and other minor documentation changes.
 

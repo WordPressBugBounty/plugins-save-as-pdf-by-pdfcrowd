@@ -232,7 +232,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4520',
+        'version' => '4530',
     );
 
     private static $API_OPTIONS = array(
@@ -459,7 +459,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4520) {
+        if($options['version'] == 4530) {
             return $options;
         }
 
@@ -494,7 +494,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4520;
+        $options['version'] = 4530;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -896,6 +896,31 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $options = $this->get_options();
 
         if($attrs) {
+            // validate some $attrs
+            if(isset($attrs['button_custom_html']) ||
+               isset($attrs['button_indicator_html'])) {
+                $post_id = get_the_ID();
+                $author_id = $post_id ?
+                    (int) get_post_field('post_author', $post_id) : 0;
+                $author = $author_id ? get_user_by('id', $author_id) : null;
+
+                if($author && !user_can($author, 'unfiltered_html')) {
+                    if(array_key_exists('button_custom_html', $attrs)) {
+                        $attrs['button_custom_html'] = wp_kses_post(
+                            $attrs['button_custom_html']);
+                    }
+
+                    if(array_key_exists('button_indicator_html', $attrs)) {
+                        $attrs['button_custom_html'] = wp_kses_post(
+                            $attrs['button_custom_html']);
+                    }
+
+                    // do not allow to set custom java scripts for conversion
+                    $attrs['custom_javascript'] = '';
+                    $attrs['on_load_javascript'] = '';
+                }
+            }
+
             foreach($attrs as $key => $value) {
                 if(is_string($key)) {
                     // accept only string keys
@@ -1250,7 +1275,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.2 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.3 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
