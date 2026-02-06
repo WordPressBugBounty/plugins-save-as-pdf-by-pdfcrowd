@@ -72,13 +72,27 @@ class Save_As_Pdf_Pdfcrowd_Admin {
      * @since    1.0.0
      */
     public function enqueue_scripts() {
-        wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/save-as-pdf-pdfcrowd-admin.js', array( 'jquery', 'wp-color-picker' ), $this->version, false );
+        wp_enqueue_script($this->plugin_name,
+                          plugin_dir_url( __FILE__ ) . 'js/save-as-pdf-pdfcrowd-admin.js',
+                          array( 'jquery', 'wp-color-picker' ),
+                          $this->version,
+                          false);
 
         wp_enqueue_script($this->plugin_name . 'indicators',
                           plugin_dir_url( __FILE__ ) . '../public/js/save-as-pdf-pdfcrowd-indicators.js',
                           array('jquery'),
                           $this->version,
                           false);
+
+        $public_data = array(
+            'ajax_url' => admin_url('admin-ajax.php')
+        );
+
+        wp_localize_script(
+            $this->plugin_name,
+            'save_as_pdf_pdfcrowd',
+            $public_data
+        );
     }
 
     /**
@@ -151,7 +165,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
                             function() {
             jQuery(this).closest('.save-as-pdf-pdfcrowd-notice').hide();
             jQuery.ajax({
-                url: ajaxurl,
+                url: window.save_as_pdf_pdfcrowd.ajax_url,
                 type: 'post',
                 data: {
                     action: 'save_as_pdf_pdfcrowd_dismiss_upgrade'
@@ -283,7 +297,7 @@ class Save_As_Pdf_Pdfcrowd_Admin {
     public function validate($input) {
         $options = get_option($this->plugin_name);
         $valid = $input;
-        $valid['version'] = 4530;
+        $valid['version'] = 4560;
 
         if(isset($input['wp_submit_action'])) {
             if($input['wp_submit_action'] === 'reset') {

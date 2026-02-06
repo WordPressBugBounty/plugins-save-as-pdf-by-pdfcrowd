@@ -30,3 +30,4 @@ if(!empty($options['username']) && !empty($options['api_key'])) {
 }
 
 delete_option('save-as-pdf-pdfcrowd');
+delete_option('save-as-pdf-pdfcrowd_encryption_secret');

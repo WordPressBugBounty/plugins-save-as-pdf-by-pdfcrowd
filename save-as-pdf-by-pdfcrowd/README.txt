@@ -3,7 +3,7 @@ Contributors: PDFCrowd
 Tags: pdf conversion, web to pdf, content export, pdf widget, printable content
 Requires PHP: 5.1
 Requires at least: 4.0
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -109,6 +109,15 @@ In essence, the plugin sends a request to the PDFCrowd API with either the URL o
 
 
 == Changelog ==
+
+= 4.5.6 =
+* Fixed CVE-2026-0862 by avoiding the use of an empty key for encryption.
+
+= 4.5.5 =
+* Enhanced descriptions of plugin options.
+
+= 4.5.4 =
+* Fixed: Prevent undefined AJAX URL by reliably exposing admin-ajax.php, avoiding clashes with third-party plugins.
 
 = 4.5.3 =
 * Fixed stored XSS vulnerability in shortcode by sanitizing custom HTML attributes with wp_kses_post().

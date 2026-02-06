@@ -86,7 +86,8 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page size.
+                            Set the output page size using standard formats (A4, Letter, A3, etc.). Use A4 for international documents, Letter for US-based content, or larger sizes like A3 for posters and presentations.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -111,7 +112,9 @@
                         placeholder="8.27in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page width. The safe maximum is <span class='field-value'>200in</span> otherwise some PDF viewers may be unable to open the PDF.
+                            Set custom page dimensions when standard sizes don't fit your needs. Useful for banners, receipts, custom forms, or when matching specific printing equipment.
+The safe maximum is <code>200in</code> - larger sizes may fail to open in some PDF viewers. For standard sizes like A4 or Letter, use the predefined page size option instead.
+
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -137,7 +140,9 @@
                         placeholder="11.7in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page height. Use <span class='field-value'>-1</span> for a single page PDF. The safe maximum is <span class='field-value'>200in</span> otherwise some PDF viewers may be unable to open the PDF.
+                            Set custom page height for specific formats like receipts, banners, or legal documents. Set to <code>"-1"</code> for a single-page PDF that expands to fit all content vertically - ideal for web pages, infographics, or documents where page breaks are undesirable.
+The safe maximum is <code>200in</code> otherwise some viewers cannot open the PDF. For standard sizes, use the predefined page size option instead.
+
                               The value must be -1 or specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -161,7 +166,8 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page orientation.
+                            Set the output page orientation to portrait or landscape. Use landscape for wide content like spreadsheets, charts, or dashboards. Use portrait for standard documents and text-heavy content.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -186,7 +192,9 @@
                         placeholder="0.4in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page top margin.
+                            Control white space at the top of the page. Increase for header space, formal documents, or annotation room (e.g., 1in or more). Decrease to maximize content area or fit more content (e.g., 5mm to 10mm).
+Default 0.4in balances readability with space efficiency. Set to 0 for full-bleed designs. Affects where content starts and where headers appear.
+
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -212,7 +220,9 @@
                         placeholder="0.4in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page right margin.
+                            Control white space on the right edge of the page. Increase for binding/hole-punch clearance or note-taking space (e.g., 1in or more). Decrease to fit wider content (e.g., 5mm to 10mm).
+Default 0.4in balances readability with space efficiency. Set to 0 for full-bleed designs. Affects where content wraps and text line length.
+
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -238,7 +248,9 @@
                         placeholder="0.4in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page bottom margin.
+                            Control white space at the bottom of the page. Increase for footer space, page numbers, or formal documents (e.g., 1in or more). Decrease to fit more content per page (e.g., 5mm to 10mm).
+Default 0.4in balances readability with space efficiency. Set to 0 for full-bleed designs. Affects where content ends and where footers appear.
+
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -264,7 +276,9 @@
                         placeholder="0.4in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the output page left margin.
+                            Control white space on the left edge of the page. Increase for binding/hole-punch clearance or note-taking space (e.g., 1in or more). Decrease to fit wider content (e.g., 5mm to 10mm).
+Default 0.4in balances readability with space efficiency. Set to 0 for full-bleed designs. Affects where content starts horizontally and text line length.
+
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -284,7 +298,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_margins" name="save-as-pdf-pdfcrowd[no_margins]" value="1" <?php checked( $no_margins, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Disable page margins.
+                            Disable all page margins to use the entire page area. Use this for full-bleed designs where content should extend to the page edges, such as posters, certificates, or branded materials.
+Combine with custom CSS to ensure your content fills the page properly.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -309,7 +325,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the page range to print.
+                            Set the page range to print when you only need specific pages from the conversion. Use this to extract individual pages (e.g., "2"), specific ranges (e.g., "3-7"), or combinations (e.g., "1,4-6,last"). Ideal for creating excerpts from long documents or excluding cover pages from batch processing.
                               A comma separated list of page numbers or ranges. Special strings may be used, such as 'odd', 'even' and 'last'.
                           </div>
                         </div>
@@ -349,9 +365,11 @@
                     </div>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the viewport width for formatting the HTML content when generating a PDF. By specifying a viewport width, you can control how the content is rendered, ensuring it mimics the appearance on various devices or matches specific design requirements.
+                            Set the viewport width for formatting the HTML content when generating a PDF. Use this to control how responsive designs render - prevent mobile styles from applying when you want desktop layout, or ensure content appears at the right width.
+Specify a viewport width to control content rendering, ensuring it mimics the appearance on various devices or matches specific design requirements.
+
                           </div>
-                            <br>Possible values: <ul><li>"balanced" - The smart option to adjust the viewport width dynamically to fit the print area, ensuring an optimal layout.</li><li>"small" - A compact layout where less text fits on each PDF page, ideal for detailed sections or mobile views.</li><li>"medium" - A balanced amount of text per page, striking a good compromise between readability and content density.</li><li>"large" - A broader layout that accommodates more text per page, perfect for reducing page count and enhancing flow.</li><li>"extra-large" - Maximize the text per page, creating a spacious and content-rich PDF, akin to a widescreen experience.</li><li>A precise viewport width in pixels, such as <span class='field-value'>1024px</span>, to tailor the PDF's text density to your specific requirements. The value must be in the range 96-65000px.</li></ul>
+                            <br>Possible values: <ul><li>"balanced" - The smart option to adjust the viewport width dynamically to fit the print area, ensuring an optimal layout.</li><li>"small" - A compact layout where less text fits on each PDF page, ideal for detailed sections or mobile views.</li><li>"medium" - A balanced amount of text per page, striking a good compromise between readability and content density.</li><li>"large" - A broader layout that accommodates more text per page, perfect for reducing page count and enhancing flow.</li><li>"extra-large" - Maximize the text per page, creating a spacious and content-rich PDF, akin to a widescreen experience.</li><li>A precise viewport width in pixels, such as <code>1024px</code>, to tailor the PDF's text density to your specific requirements. The value must be in the range 96-65000px.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>content_viewport_width</strong>"<br>Possible values: "balanced", "small", "medium", "large", "extra-large", "specific numerical value"
@@ -386,9 +404,9 @@
                     </div>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the viewport height for formatting the HTML content when generating a PDF. By specifying a viewport height, you can enforce loading of lazy-loaded images and also affect vertical positioning of absolutely positioned elements within the content.
+                            Set the viewport height for formatting the HTML content when generating a PDF. Specify a viewport height to enforce loading of lazy-loaded images and affect vertical positioning of absolutely positioned elements within the content.
                           </div>
-                            <br>Possible values: <ul><li>"auto" - The height of the print area is used.</li><li>"large" - Value suitable for documents with extensive lazy-loaded content.</li><li>A specific numerical value, such as <span class='field-value'>10000px</span>, to set as the window height, allowing precise control based on the document's requirements.</li></ul>
+                            <br>Possible values: <ul><li>"auto" - The height of the print area is used. For most pages, this is sufficient. Use "large" or custom values for pages with extensive lazy-loaded content.</li><li>"large" - Value suitable for documents with extensive lazy-loaded content.</li><li>A specific numerical value, such as <code>10000px</code>, to set as the window height, allowing precise control based on the document's requirements.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>content_viewport_height</strong>"<br>Possible values: "auto", "large", "specific numerical value"
@@ -415,9 +433,9 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies the mode for fitting the HTML content to the print area by upscaling or downscaling it.
+                            Specify the mode for fitting the HTML content to the print area by upscaling or downscaling it. Use this to prevent content from being cut off at page edges or to enable smart scaling of oversized content.
                           </div>
-                            <br>Possible values: <ul><li>"auto" - Automatic mode</li><li>"smart-scaling" - Smartscaling to fit more content into the print area.</li><li>"no-scaling" - No scaling is performed.</li><li>"viewport-width" - The viewport width fits the print area width.</li><li>"content-width" - The HTML content width fits the print area width.</li><li>"single-page" - The entire HTML content fits the print area of a single page.</li><li>"single-page-ratio" - The entire HTML content fits the print area of a single page, maintaining the aspect ratio of the page height and width.</li></ul>
+                            <br>Possible values: <ul><li>"auto" - Automatic mode</li><li>"smart-scaling" - Smartscaling to fit more content into the print area.</li><li>"no-scaling" - No scaling is performed. Content may be cut off if it exceeds page boundaries. Use for pixel-perfect output.</li><li>"viewport-width" - The viewport width fits the print area width.</li><li>"content-width" - The HTML content width fits the print area width.</li><li>"single-page" - The entire HTML content fits the print area of a single page.</li><li>"single-page-ratio" - The entire HTML content fits the print area of a single page, maintaining the aspect ratio of the page height and width.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>content_fit_mode</strong>"<br>Possible values: "auto", "smart-scaling", "no-scaling", "viewport-width", "content-width", "single-page", "single-page-ratio"
@@ -439,7 +457,7 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies which blank pages to exclude from the output document.
+                            Specify which blank pages to exclude from the output document to create cleaner PDFs. Use <code>"trailing"</code> to remove empty pages at the end caused by page break issues. Use <code>"all"</code> to remove blank pages throughout the document when converting content with formatting quirks. Helps eliminate unwanted white pages from the final output.
                           </div>
                             <br>Possible values: <ul><li>"trailing" - Trailing blank pages are removed from the document.</li><li>"all" - All empty pages are removed from the document.</li><li>"none" - No blank page is removed from the document.</li></ul>
                         </div>
@@ -489,7 +507,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Load an HTML code from the specified URL and use it as the page header. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><span class='field-value'>pdfcrowd-page-count</span> - the total page count of printed pages</li> <li><span class='field-value'>pdfcrowd-page-number</span> - the current page number</li> <li><span class='field-value'>pdfcrowd-source-url</span> - the source URL of the converted document</li> <li><span class='field-value'>pdfcrowd-source-title</span> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><span class='field-value'>data-pdfcrowd-number-format</span> - specifies the type of the used numerals. Allowed values: <ul> <li><span class='field-value'>arabic</span> - Arabic numerals, they are used by default</li> <li><span class='field-value'>roman</span> - Roman numerals</li> <li><span class='field-value'>eastern-arabic</span> - Eastern Arabic numerals</li> <li><span class='field-value'>bengali</span> - Bengali numerals</li> <li><span class='field-value'>devanagari</span> - Devanagari numerals</li> <li><span class='field-value'>thai</span> - Thai numerals</li> <li><span class='field-value'>east-asia</span> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><span class='field-value'>chinese-formal</span> - Chinese formal numerals</li> </ul> Please contact us if you need another type of numerals.<br> Example:<br> &lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt; </li> <li><span class='field-value'>data-pdfcrowd-placement</span> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: &lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;<br> will produce &lt;span&gt;http://example.com&lt;/span&gt; </li> </ul> </li> <li><span class='field-value'>href</span> - the URL is set to the href attribute <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;Link to source&lt;/a&gt; </li> </ul> </li> <li><span class='field-value'>href-and-content</span> - the URL is set to the href attribute and to the content <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt; </li> </ul> </li> </ul> </li> </ul>
+                            Load an HTML code from the specified URL and use it as the page header. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><code>pdfcrowd-page-count</code> - the total page count of printed pages</li> <li><code>pdfcrowd-page-number</code> - the current page number</li> <li><code>pdfcrowd-source-url</code> - the source URL of the converted document</li> <li><code>pdfcrowd-source-title</code> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><code>data-pdfcrowd-number-format</code> - specifies the type of the used numerals. Allowed values: <ul> <li><code>arabic</code> - Arabic numerals, they are used by default</li> <li><code>roman</code> - Roman numerals</li> <li><code>eastern-arabic</code> - Eastern Arabic numerals</li> <li><code>bengali</code> - Bengali numerals</li> <li><code>devanagari</code> - Devanagari numerals</li> <li><code>thai</code> - Thai numerals</li> <li><code>east-asia</code> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><code>chinese-formal</code> - Chinese formal numerals</li> </ul> Example:<br> <code>&lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt;</code> </li> <li><code>data-pdfcrowd-placement</code> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: <code>&lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;</code><br> will produce <code>&lt;span&gt;http://example.com&lt;/span&gt;</code> </li> </ul> </li> <li><code>href</code> - the URL is set to the href attribute <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;Link to source&lt;/a&gt;</code> </li> </ul> </li> <li><code>href-and-content</code> - the URL is set to the href attribute and to the content <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt;</code> </li> </ul> </li> </ul> </li> </ul>
                               Supported protocols are http:// and https://.
                           </div>
                         </div>
@@ -512,7 +530,9 @@
                     cols=60 autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><?php esc_html_e($header_html); ?></textarea>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Use the specified HTML code as the page header. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><span class='field-value'>pdfcrowd-page-count</span> - the total page count of printed pages</li> <li><span class='field-value'>pdfcrowd-page-number</span> - the current page number</li> <li><span class='field-value'>pdfcrowd-source-url</span> - the source URL of the converted document</li> <li><span class='field-value'>pdfcrowd-source-title</span> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><span class='field-value'>data-pdfcrowd-number-format</span> - specifies the type of the used numerals. Allowed values: <ul> <li><span class='field-value'>arabic</span> - Arabic numerals, they are used by default</li> <li><span class='field-value'>roman</span> - Roman numerals</li> <li><span class='field-value'>eastern-arabic</span> - Eastern Arabic numerals</li> <li><span class='field-value'>bengali</span> - Bengali numerals</li> <li><span class='field-value'>devanagari</span> - Devanagari numerals</li> <li><span class='field-value'>thai</span> - Thai numerals</li> <li><span class='field-value'>east-asia</span> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><span class='field-value'>chinese-formal</span> - Chinese formal numerals</li> </ul> Please contact us if you need another type of numerals.<br> Example:<br> &lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt; </li> <li><span class='field-value'>data-pdfcrowd-placement</span> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: &lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;<br> will produce &lt;span&gt;http://example.com&lt;/span&gt; </li> </ul> </li> <li><span class='field-value'>href</span> - the URL is set to the href attribute <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;Link to source&lt;/a&gt; </li> </ul> </li> <li><span class='field-value'>href-and-content</span> - the URL is set to the href attribute and to the content <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt; </li> </ul> </li> </ul> </li> </ul>
+                            Set the HTML header content with custom styling and dynamic page numbers. Use this to add page numbers, document titles, author names, dates, or company branding to the top of every page. Supports full HTML/CSS for complete design control.
+Use special CSS classes like <code>pdfcrowd-page-number</code> and <code>pdfcrowd-page-count</code> for dynamic content. Ideal for reports, invoices, and professional documents.
+ The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><code>pdfcrowd-page-count</code> - the total page count of printed pages</li> <li><code>pdfcrowd-page-number</code> - the current page number</li> <li><code>pdfcrowd-source-url</code> - the source URL of the converted document</li> <li><code>pdfcrowd-source-title</code> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><code>data-pdfcrowd-number-format</code> - specifies the type of the used numerals. Allowed values: <ul> <li><code>arabic</code> - Arabic numerals, they are used by default</li> <li><code>roman</code> - Roman numerals</li> <li><code>eastern-arabic</code> - Eastern Arabic numerals</li> <li><code>bengali</code> - Bengali numerals</li> <li><code>devanagari</code> - Devanagari numerals</li> <li><code>thai</code> - Thai numerals</li> <li><code>east-asia</code> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><code>chinese-formal</code> - Chinese formal numerals</li> </ul> Example:<br> <code>&lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt;</code> </li> <li><code>data-pdfcrowd-placement</code> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: <code>&lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;</code><br> will produce <code>&lt;span&gt;http://example.com&lt;/span&gt;</code> </li> </ul> </li> <li><code>href</code> - the URL is set to the href attribute <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;Link to source&lt;/a&gt;</code> </li> </ul> </li> <li><code>href-and-content</code> - the URL is set to the href attribute and to the content <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt;</code> </li> </ul> </li> </ul> </li> </ul>
                               
                           </div>
                         </div>
@@ -538,7 +558,7 @@
                         placeholder="0.5in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the header height.
+                            Set the header height to allocate space for header content and prevent overlap with main content. Increase this if your header text is getting cut off or overlapping with page content. Must be large enough to accommodate your header HTML including any multi-line text or images.
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -564,7 +584,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Load an HTML code from the specified URL and use it as the page footer. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><span class='field-value'>pdfcrowd-page-count</span> - the total page count of printed pages</li> <li><span class='field-value'>pdfcrowd-page-number</span> - the current page number</li> <li><span class='field-value'>pdfcrowd-source-url</span> - the source URL of the converted document</li> <li><span class='field-value'>pdfcrowd-source-title</span> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><span class='field-value'>data-pdfcrowd-number-format</span> - specifies the type of the used numerals. Allowed values: <ul> <li><span class='field-value'>arabic</span> - Arabic numerals, they are used by default</li> <li><span class='field-value'>roman</span> - Roman numerals</li> <li><span class='field-value'>eastern-arabic</span> - Eastern Arabic numerals</li> <li><span class='field-value'>bengali</span> - Bengali numerals</li> <li><span class='field-value'>devanagari</span> - Devanagari numerals</li> <li><span class='field-value'>thai</span> - Thai numerals</li> <li><span class='field-value'>east-asia</span> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><span class='field-value'>chinese-formal</span> - Chinese formal numerals</li> </ul> Please contact us if you need another type of numerals.<br> Example:<br> &lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt; </li> <li><span class='field-value'>data-pdfcrowd-placement</span> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: &lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;<br> will produce &lt;span&gt;http://example.com&lt;/span&gt; </li> </ul> </li> <li><span class='field-value'>href</span> - the URL is set to the href attribute <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;Link to source&lt;/a&gt; </li> </ul> </li> <li><span class='field-value'>href-and-content</span> - the URL is set to the href attribute and to the content <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt; </li> </ul> </li> </ul> </li> </ul>
+                            Load an HTML code from the specified URL and use it as the page footer. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><code>pdfcrowd-page-count</code> - the total page count of printed pages</li> <li><code>pdfcrowd-page-number</code> - the current page number</li> <li><code>pdfcrowd-source-url</code> - the source URL of the converted document</li> <li><code>pdfcrowd-source-title</code> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><code>data-pdfcrowd-number-format</code> - specifies the type of the used numerals. Allowed values: <ul> <li><code>arabic</code> - Arabic numerals, they are used by default</li> <li><code>roman</code> - Roman numerals</li> <li><code>eastern-arabic</code> - Eastern Arabic numerals</li> <li><code>bengali</code> - Bengali numerals</li> <li><code>devanagari</code> - Devanagari numerals</li> <li><code>thai</code> - Thai numerals</li> <li><code>east-asia</code> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><code>chinese-formal</code> - Chinese formal numerals</li> </ul> Example:<br> <code>&lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt;</code> </li> <li><code>data-pdfcrowd-placement</code> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: <code>&lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;</code><br> will produce <code>&lt;span&gt;http://example.com&lt;/span&gt;</code> </li> </ul> </li> <li><code>href</code> - the URL is set to the href attribute <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;Link to source&lt;/a&gt;</code> </li> </ul> </li> <li><code>href-and-content</code> - the URL is set to the href attribute and to the content <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt;</code> </li> </ul> </li> </ul> </li> </ul>
                               Supported protocols are http:// and https://.
                           </div>
                         </div>
@@ -587,7 +607,9 @@
                     cols=60 autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><?php esc_html_e($footer_html); ?></textarea>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Use the specified HTML as the page footer. The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><span class='field-value'>pdfcrowd-page-count</span> - the total page count of printed pages</li> <li><span class='field-value'>pdfcrowd-page-number</span> - the current page number</li> <li><span class='field-value'>pdfcrowd-source-url</span> - the source URL of the converted document</li> <li><span class='field-value'>pdfcrowd-source-title</span> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><span class='field-value'>data-pdfcrowd-number-format</span> - specifies the type of the used numerals. Allowed values: <ul> <li><span class='field-value'>arabic</span> - Arabic numerals, they are used by default</li> <li><span class='field-value'>roman</span> - Roman numerals</li> <li><span class='field-value'>eastern-arabic</span> - Eastern Arabic numerals</li> <li><span class='field-value'>bengali</span> - Bengali numerals</li> <li><span class='field-value'>devanagari</span> - Devanagari numerals</li> <li><span class='field-value'>thai</span> - Thai numerals</li> <li><span class='field-value'>east-asia</span> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><span class='field-value'>chinese-formal</span> - Chinese formal numerals</li> </ul> Please contact us if you need another type of numerals.<br> Example:<br> &lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt; </li> <li><span class='field-value'>data-pdfcrowd-placement</span> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: &lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;<br> will produce &lt;span&gt;http://example.com&lt;/span&gt; </li> </ul> </li> <li><span class='field-value'>href</span> - the URL is set to the href attribute <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;Link to source&lt;/a&gt; </li> </ul> </li> <li><span class='field-value'>href-and-content</span> - the URL is set to the href attribute and to the content <ul> <li> Example: &lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;<br> will produce &lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt; </li> </ul> </li> </ul> </li> </ul>
+                            Set the HTML footer content with custom styling and dynamic page numbers. Use this to add page numbers, copyright notices, document dates, or company information to the bottom of every page. Supports full HTML/CSS for complete design control.
+Use special CSS classes like <code>pdfcrowd-page-number</code> and <code>pdfcrowd-page-count</code> for dynamic content. Ideal for contracts, reports, and official documents.
+ The following classes can be used in the HTML. The content of the respective elements will be expanded as follows: <ul> <li><code>pdfcrowd-page-count</code> - the total page count of printed pages</li> <li><code>pdfcrowd-page-number</code> - the current page number</li> <li><code>pdfcrowd-source-url</code> - the source URL of the converted document</li> <li><code>pdfcrowd-source-title</code> - the title of the converted document</li> </ul> The following attributes can be used: <ul> <li><code>data-pdfcrowd-number-format</code> - specifies the type of the used numerals. Allowed values: <ul> <li><code>arabic</code> - Arabic numerals, they are used by default</li> <li><code>roman</code> - Roman numerals</li> <li><code>eastern-arabic</code> - Eastern Arabic numerals</li> <li><code>bengali</code> - Bengali numerals</li> <li><code>devanagari</code> - Devanagari numerals</li> <li><code>thai</code> - Thai numerals</li> <li><code>east-asia</code> - Chinese, Vietnamese, Japanese and Korean numerals</li> <li><code>chinese-formal</code> - Chinese formal numerals</li> </ul> Example:<br> <code>&lt;span class='pdfcrowd-page-number' data-pdfcrowd-number-format='roman'&gt;&lt;/span&gt;</code> </li> <li><code>data-pdfcrowd-placement</code> - specifies where to place the source URL. Allowed values: <ul> <li>The URL is inserted to the content <ul> <li> Example: <code>&lt;span class='pdfcrowd-source-url'&gt;&lt;/span&gt;</code><br> will produce <code>&lt;span&gt;http://example.com&lt;/span&gt;</code> </li> </ul> </li> <li><code>href</code> - the URL is set to the href attribute <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href'&gt;Link to source&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;Link to source&lt;/a&gt;</code> </li> </ul> </li> <li><code>href-and-content</code> - the URL is set to the href attribute and to the content <ul> <li> Example: <code>&lt;a class='pdfcrowd-source-url' data-pdfcrowd-placement='href-and-content'&gt;&lt;/a&gt;</code><br> will produce <code>&lt;a href='http://example.com'&gt;http://example.com&lt;/a&gt;</code> </li> </ul> </li> </ul> </li> </ul>
                               
                           </div>
                         </div>
@@ -613,7 +635,7 @@
                         placeholder="0.5in" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the footer height.
+                            Set the footer height to allocate space for footer content and prevent overlap with main content. Increase this if your footer text is getting cut off or overlapping with page content. Must be large enough to accommodate your footer HTML including any multi-line text or images.
                               The value must be specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
                           </div>
                         </div>
@@ -735,7 +757,9 @@
                         placeholder="0" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set an offset between physical and logical page numbers.
+                            Set the numbering offset for page numbers in header/footer HTML to continue page numbering from a previous document. Use this when generating document sections separately - for example, if you have already generated pages 1-10, set offset to 10. The next section will then start numbering at page 11.
+Essential for multi-part reports or book chapters.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -772,7 +796,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Apply a watermark to each page of the output PDF file. A watermark can be either a PDF or an image. If a multi-page file (PDF or TIFF) is used, the first page is used as the watermark. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
+                            Apply the first page of a watermark PDF to every page of the output PDF. Use this to add transparent overlays like "DRAFT" stamps, security markings, or branding elements that appear on top of content. Ideal for confidential document marking or adding protective overlays. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -824,7 +848,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Apply each page of a watermark to the corresponding page of the output PDF. A watermark can be either a PDF or an image. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
+                            Apply each page of a watermark PDF to the corresponding page of the output PDF. Use this for page-specific watermarks where different pages need different overlays - for example, different approval stamps per department.
+If the watermark has fewer pages than the output, the last watermark page is repeated for remaining pages.
+ Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -876,7 +902,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Apply a background to each page of the output PDF file. A background can be either a PDF or an image. If a multi-page file (PDF or TIFF) is used, the first page is used as the background. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
+                            Apply the first page of a background PDF to every page of the output PDF. Use this to add letterheads, branded templates, or decorative backgrounds that appear behind your content. Backgrounds appear beneath content, while watermarks layer on top.
+Perfect for adding company letterheads to reports or applying branded templates to dynamically generated content.
+ Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -928,7 +956,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Apply each page of a background to the corresponding page of the output PDF. A background can be either a PDF or an image. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
+                            Apply each page of a background PDF to the corresponding page of the output PDF. Use this for page-specific backgrounds where each page needs a different template - for example, different letterheads for front and back pages.
+If the background has fewer pages than the output, the last background page is repeated for remaining pages.
+ Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.pdf.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -980,7 +1010,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            The page background color in RGB or RGBA hexadecimal format. The color fills the entire page regardless of the margins.
+                            Set a solid background color for all pages, filling the entire page area including margins. Useful for creating branded PDFs with corporate colors, highlighting draft documents, or improving readability with off-white backgrounds.
+Supports transparency with RGBA format - use semi-transparent colors for subtle effects without obscuring content. Format as RGB (FF0000) or RGBA (FF000080) hexadecimal.
+
                               The value must be in RRGGBB or RRGGBBAA hexadecimal format.
                           </div>
                         </div>
@@ -1012,7 +1044,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-use_print_media" name="save-as-pdf-pdfcrowd[use_print_media]" value="1" <?php checked( $use_print_media, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Use the print version of the page if available (@media print).
+                            Use the print version of the page if available via <code>@media</code> print CSS rules. Enable this when converting websites that have print-optimized styles. Many sites hide navigation, ads, and sidebars in print mode.
+Produces cleaner PDFs by using the design the website creator intended for printing.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1031,7 +1065,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_background" name="save-as-pdf-pdfcrowd[no_background]" value="1" <?php checked( $no_background, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Do not print the background graphics.
+                            Do not print the background graphics to create printer-friendly PDFs. Use this when documents will be physically printed to save ink costs and improve readability.
+Removes background colors, images, and patterns while preserving text and foreground content. Particularly useful for documents with dark backgrounds or decorative elements.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1050,7 +1086,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-disable_javascript" name="save-as-pdf-pdfcrowd[disable_javascript]" value="1" <?php checked( $disable_javascript, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Do not execute JavaScript.
+                            Do not execute JavaScript during conversion. Use this to improve conversion speed when JavaScript is not needed, prevent dynamic content changes, or avoid security risks from untrusted scripts.
+Note that disabling JavaScript means lazy-loaded images and AJAX content will not load.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1069,7 +1107,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-disable_image_loading" name="save-as-pdf-pdfcrowd[disable_image_loading]" value="1" <?php checked( $disable_image_loading, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Do not load images.
+                            Do not load images during conversion to create text-only PDFs. Use this to significantly speed up conversion, reduce file size, or create accessible text-focused documents.
+Ideal for converting documentation where images are not needed, reducing bandwidth usage, or creating lightweight PDFs for email distribution.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1088,7 +1128,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-disable_remote_fonts" name="save-as-pdf-pdfcrowd[disable_remote_fonts]" value="1" <?php checked( $disable_remote_fonts, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Disable loading fonts from remote sources.
+                            Disable loading fonts from remote sources. Use this to speed up conversion by avoiding font download delays, ensure consistent rendering with system fonts, or work around font loading failures.
+Note that text will fall back to system fonts, which may change the document's appearance.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1107,7 +1149,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-use_mobile_user_agent" name="save-as-pdf-pdfcrowd[use_mobile_user_agent]" value="1" <?php checked( $use_mobile_user_agent, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Use a mobile user agent.
+                            Use a mobile user agent when making requests to the source URL.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1130,7 +1172,9 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies how iframes are handled.
+                            Specifies how iframes are handled during conversion. Use <code>"all"</code> to include all embedded content (videos, maps, widgets). Use <code>"same-origin"</code> to include only content from the same domain for security purposes. Use <code>"none"</code> to exclude all iframes for faster conversion and to avoid third-party content issues.
+Disabling iframes can significantly improve performance and reliability.
+
                           </div>
                             <br>Possible values: <ul><li>"all" - All iframes are loaded.</li><li>"same-origin" - Only iframes with the same origin as the main page are loaded.</li><li>"none" - Iframe loading is disabled.</li></ul>
                         </div>
@@ -1150,7 +1194,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-block_ads" name="save-as-pdf-pdfcrowd[block_ads]" value="1" <?php checked( $block_ads, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Try to block ads. Enabling this option can produce smaller output and speed up the conversion.
+                            Automatically block common advertising networks and tracking scripts during conversion, producing cleaner PDFs with faster conversion times. Filters out third-party ad content, analytics beacons, and ad network resources.
+Ideal for converting news sites, blogs, or any ad-heavy content where ads distract from the main message. May occasionally block legitimate third-party content - disable if critical third-party resources are missing.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1175,7 +1221,9 @@
                         placeholder="auto detect" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the default HTML content text encoding.
+                            Specify the character encoding when the HTML lacks proper charset declaration or has incorrect encoding. Prevents garbled text for non-English content, especially legacy pages without UTF-8 encoding.
+Set to <code>"utf-8"</code> for modern content, <code>"iso-8859-1"</code> for Western European legacy pages, or other encodings for specific regional content. Only needed when auto-detection fails and you see corrupted characters in the output.
+
                               
                           </div>
                         </div>
@@ -1201,7 +1249,9 @@
                         placeholder="en-US" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the locale for the conversion. This may affect the output format of dates, times and numbers.
+                            Set the locale for the conversion to control regional formatting of dates, times, and numbers. Use this when converting content for specific regions - for example, set to <code>"en-US"</code> for MM/DD/YYYY dates and comma thousand separators, or <code>"de-DE"</code> for DD.MM.YYYY dates and period thousand separators.
+Essential for financial reports, invoices, or localized content.
+
                               
                           </div>
                         </div>
@@ -1227,7 +1277,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the HTTP authentication user name.
+                            Set the HTTP authentication user name. Required to access protected web pages or staging environments.
                               
                           </div>
                         </div>
@@ -1253,7 +1303,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the HTTP authentication password.
+                            Set the HTTP authentication password. Required to access protected web pages or staging environments.
                               
                           </div>
                         </div>
@@ -1279,7 +1329,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set HTTP cookies to be included in all requests made by the converter.
+                            Set HTTP cookies to be included in all requests made by the converter to access authenticated or session-based content. Use this when converting pages that require login, maintain user sessions, or personalize content based on cookies.
+Essential for converting member-only areas, dashboards, or any content behind cookie-based authentication. Format as semicolon-separated name=value pairs.
+
                               
                           </div>
                         </div>
@@ -1299,7 +1351,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-verify_ssl_certificates" name="save-as-pdf-pdfcrowd[verify_ssl_certificates]" value="1" <?php checked( $verify_ssl_certificates, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Do not allow insecure HTTPS connections.
+                            Enforce SSL certificate validation for secure connections, preventing conversions from sites with invalid certificates. Enable when converting from production sites with valid certificates to ensure security.
+When disabled, allows conversion from any HTTPS site regardless of certificate validity - including development servers with self-signed certificates, internal corporate sites with expired certificates, or local testing environments.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1318,7 +1372,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-fail_on_main_url_error" name="save-as-pdf-pdfcrowd[fail_on_main_url_error]" value="1" <?php checked( $fail_on_main_url_error, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Abort the conversion if the main URL HTTP status code is greater than or equal to 400.
+                            Abort the conversion if the HTTP status code of the main URL is greater than or equal to 400 (client/server errors). Use this in automated workflows to catch broken URLs or authentication failures early rather than producing invalid PDFs. Ensures your system does not silently generate error page PDFs when source content is unavailable.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1337,7 +1391,8 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-fail_on_any_url_error" name="save-as-pdf-pdfcrowd[fail_on_any_url_error]" value="1" <?php checked( $fail_on_any_url_error, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Abort the conversion if any of the sub-request HTTP status code is greater than or equal to 400 or if some sub-requests are still pending. See details in a debug log.
+                            Abort the conversion if any sub-request (images, stylesheets, scripts) fails with HTTP 400+ errors. Use this for strict quality control when all assets must load successfully.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1356,7 +1411,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_xpdfcrowd_header" name="save-as-pdf-pdfcrowd[no_xpdfcrowd_header]" value="1" <?php checked( $no_xpdfcrowd_header, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Do not send the X-Pdfcrowd HTTP header in PDFCrowd HTTP requests.
+                            Do not send the X-Pdfcrowd HTTP header in HTTP requests made by the converter. Use this if your target server blocks or logs requests with this header, or for privacy when you do not want sites to know you are using PDFCrowd. Some security systems may block requests with non-standard headers.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1379,9 +1434,11 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies behavior in presence of CSS @page rules. It may affect the page size, margins and orientation.
+                            Specifies behavior in the presence of CSS <code>@page</code> rules to control which settings take precedence. Use <code>"default"</code> to prioritize API settings over CSS rules, ensuring consistent output regardless of input HTML. Use <code>"mode2"</code> to respect CSS <code>@page</code> rules for print-optimized HTML.
+This solves conflicts when CSS tries to override your API page setup.
+
                           </div>
-                            <br>Possible values: <ul><li>"default" - The PDFCrowd API page settings are preferred.</li><li>"mode1" - The converter version 18.10 mode.</li><li>"mode2" - CSS @page rule is preferred.</li></ul>
+                            <br>Possible values: <ul><li>"default" - The PDFCrowd API page settings are preferred.</li><li>"mode1" - The converter version 18.10 mode. Use for backward compatibility with legacy conversion behavior.</li><li>"mode2" - CSS @page rule is preferred. Use when your HTML has print-optimized @page rules that should override API settings.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>css_page_rule_mode</strong>"<br>Possible values: "default", "mode1", "mode2"
@@ -1402,7 +1459,9 @@
                     cols=60 autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><?php esc_html_e($custom_css); ?></textarea>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Apply custom CSS to the input HTML document. It allows you to modify the visual appearance and layout of your HTML content dynamically. Tip: Using <span class='field-value'>!important</span> in custom CSS provides a way to prioritize and override conflicting styles.
+                            Apply custom CSS to the input HTML document to modify the visual appearance and layout of your content dynamically. Use this to override default styles, adjust spacing, change fonts, or fix layout issues without modifying the source HTML.
+Use <code>!important</code> in your CSS rules to prioritize and override conflicting styles.
+
                               
                           </div>
                         </div>
@@ -1425,7 +1484,9 @@
                     cols=60 autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><?php esc_html_e($custom_javascript); ?></textarea>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Run a custom JavaScript after the document is loaded and ready to print. The script is intended for post-load DOM manipulation (add/remove elements, update CSS, ...). In addition to the standard browser APIs, the custom JavaScript code can use helper functions from our <a href='https://pdfcrowd.com/api/libpdfcrowd/'>JavaScript library</a>.
+                            Run a custom JavaScript after the document is loaded and ready to print. Use this to modify page content before conversion, remove unwanted elements, or trigger specific page states. The script is intended for post-load DOM manipulation (add/remove elements, update CSS, ...).
+In addition to the standard browser APIs, the custom JavaScript code can use helper functions from our <a href='https://pdfcrowd.com/api/libpdfcrowd/'>JavaScript library</a>.
+
                               
                           </div>
                         </div>
@@ -1474,7 +1535,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set a custom HTTP header to be included in all requests made by the converter.
+                            Set a custom HTTP header to be included in all requests made by the converter. Use this to pass authentication tokens to protected sites, add tracking headers for analytics, or provide API keys for accessing private content.
+Essential when converting content from APIs or internal systems that require special headers for access control.
+
                               A string containing the header name and value separated by a colon.
                           </div>
                         </div>
@@ -1500,7 +1563,7 @@
                         placeholder="200" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Wait the specified number of milliseconds to finish all JavaScript after the document is loaded. Your license defines the maximum wait time by "Max Delay" parameter.
+                            Wait the specified number of milliseconds to finish all JavaScript after the document is loaded. Use this to ensure lazy-loaded images, AJAX content, or animations complete before conversion. Your license defines the maximum wait time by "Max Delay" parameter.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1525,7 +1588,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Wait for the specified element in a source document. The element is specified by one or more <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'>CSS selectors</a>. The element is searched for in the main document and all iframes. If the element is not found, the conversion fails. Your license defines the maximum wait time by "Max Delay" parameter.
+                            Wait for the specified element in a source document. Use this when specific dynamic content must be ready before conversion, avoiding unnecessary delays from a fixed JavaScript delay. The element is specified by one or more <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'>CSS selectors</a>. The element is searched for in the main document and all iframes.
+If the element is not found, the conversion fails. Your license defines the maximum wait time by the "Max Delay" parameter.
+
                               
                           </div>
                         </div>
@@ -1557,7 +1622,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Convert only the specified element from the main document and its children. The element is specified by one or more <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'>CSS selectors</a>. If the element is not found, the conversion fails. If multiple elements are found, the first one is used.
+                            Convert only the specified element from the main document and its children. Use this to extract specific portions of a page (like article content) while excluding navigation, headers, footers, or sidebars. The element is specified by one or more <a href='https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors'>CSS selectors</a>. If the element is not found, the conversion fails. If multiple elements are found, the first one is used.
                               
                           </div>
                         </div>
@@ -1590,22 +1655,23 @@
                                    name="save-as-pdf-pdfcrowd[element_to_convert_mode]"
                                    autocomplete="off"
                                    <?php checked($element_to_convert_mode, 'remove-siblings');?>>
-                            All element's siblings are removed.
+                            All element's siblings are removed from the DOM.
                         </label><br>
                         <label>
                             <input type="radio" value="hide-siblings"
                                    name="save-as-pdf-pdfcrowd[element_to_convert_mode]"
                                    autocomplete="off"
                                    <?php checked($element_to_convert_mode, 'hide-siblings');?>>
-                            All element's siblings are hidden.
+                            All element's siblings are hidden using display:none.
                         </label><br>
                     </fieldset>
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify the DOM handling when only a part of the document is converted. This can affect the CSS rules used.
+                            Control how CSS styles are applied when converting only part of a page. The <code>"cut-out"</code> option extracts the element into a new document root, which may break CSS selectors like <code>"body > div"</code>. The <code>"remove-siblings"</code> option keeps the element in its original DOM position but deletes other elements, preserving descendant selectors. The <code>"hide-siblings"</code> option keeps all elements but hides non-selected ones with <code>display:none</code>, preserving all CSS context.
+
                           </div>
-                            <br>Possible values: <ul><li>"cut-out" - The element and its children are cut out of the document.</li><li>"remove-siblings" - All element's siblings are removed.</li><li>"hide-siblings" - All element's siblings are hidden.</li></ul>
+                            <br>Possible values: <ul><li>"cut-out" - The element and its children are cut out of the document.</li><li>"remove-siblings" - All element's siblings are removed from the DOM. Keeps target element in position but may break descendant CSS selectors.</li><li>"hide-siblings" - All element's siblings are hidden using display:none. Preserves CSS context while hiding non-target content.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>element_to_convert_mode</strong>"<br>Possible values: "cut-out", "remove-siblings", "hide-siblings"
@@ -1623,7 +1689,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-auto_detect_element_to_convert" name="save-as-pdf-pdfcrowd[auto_detect_element_to_convert]" value="1" <?php checked( $auto_detect_element_to_convert, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            The main HTML element for conversion is detected automatically.
+                            The main HTML element for conversion is detected automatically. Use this when you want to extract article or main content without knowing the exact CSS selector, automatically excluding navigation and sidebars.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1648,9 +1714,11 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            The input HTML is automatically enhanced to improve the readability.
+                            Automatically enhance the input HTML to improve readability by removing clutter and reformatting content. Use this when converting web pages with excessive navigation, ads, or sidebars that distract from the main content.
+Different versions (<code>v1-v4</code>) use progressively aggressive algorithms - start with <code>"v1"</code> and increase if more cleanup is needed. Ideal for converting blog posts, articles, or documentation into clean PDFs.
+
                           </div>
-                            <br>Possible values: <ul><li>"none" - No enhancements are used.</li><li>"readability-v1" - Version 1 of the enhancements is used.</li><li>"readability-v2" - Version 2 of the enhancements is used.</li><li>"readability-v3" - Version 3 of the enhancements is used.</li><li>"readability-v4" - Version 4 of the enhancements is used.</li></ul>
+                            <br>Possible values: <ul><li>"none" - No enhancements are used.</li><li>"readability-v1" - Version 1 of the enhancements is used. Basic cleanup for simple pages with moderate clutter.</li><li>"readability-v2" - Version 2 of the enhancements is used. More aggressive cleanup for pages with more ads and navigation.</li><li>"readability-v3" - Version 3 of the enhancements is used. Strong cleanup for heavily cluttered pages with multiple sidebars.</li><li>"readability-v4" - Version 4 of the enhancements is used. Maximum cleanup for extremely cluttered pages. May remove some content.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>readability_enhancements</strong>"<br>Possible values: "none", "readability-v1", "readability-v2", "readability-v3", "readability-v4"
@@ -1687,7 +1755,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the viewport width in pixels. The viewport is the user's visible area of the page.
+                            Set the viewport width in pixels.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1712,7 +1780,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the viewport height in pixels. The viewport is the user's visible area of the page. If the input HTML uses lazily loaded images, try using a large value that covers the entire height of the HTML, e.g. 100000.
+                            Set the viewport height in pixels.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1737,7 +1805,7 @@
                           <div>
                             Set the rendering mode of the page, allowing control over how content is displayed.
                           </div>
-                            <br>Possible values: <ul><li>"default" - The mode based on the standard browser print functionality.</li><li>"viewport" - Adapts the rendering according to the specified viewport width, influencing the @media (min-width) and @media (max-width) CSS properties. This mode is ideal for previewing different responsive designs of a web page, such as mobile or desktop views, by choosing the appropriate viewport size.</li></ul>
+                            <br>Possible values: <ul><li>"default" - The mode based on the standard browser print functionality.</li><li>"viewport" - Adapts the rendering according to the specified viewport width, influencing the <code>@media (min-width)</code> and <code>@media (max-width)</code> CSS properties. This mode is ideal for previewing different responsive designs of a web page, such as mobile or desktop views, by choosing the appropriate viewport size.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>rendering_mode</strong>"<br>Possible values: "default", "viewport"
@@ -1764,9 +1832,9 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies the scaling mode used for fitting the HTML contents to the print area.
+                            Specify the scaling mode used for fitting the HTML contents to the print area.
                           </div>
-                            <br>Possible values: <ul><li>"default" - The mode based on the standard browser print functionality.</li><li>"disabled" - No smart scaling is performed.</li><li>"viewport-fit" - The viewport width fits the print area width.</li><li>"content-fit" - The HTML contents width fits the print area width.</li><li>"single-page-fit" - The whole HTML contents fits the print area of a single page.</li><li>"single-page-fit-ex" - The whole HTML contents fits the print area of a single page with respect to the page height/width ratio.</li><li>"mode1" - Scaling mode 1 is applied.</li></ul>
+                            <br>Possible values: <ul><li>"default" - The mode based on the standard browser print functionality.</li><li>"disabled" - No smart scaling is performed.</li><li>"viewport-fit" - The viewport width fits the print area width.</li><li>"content-fit" - The HTML contents width fits the print area width.</li><li>"single-page-fit" - The whole HTML contents fits the print area of a single page.</li><li>"single-page-fit-ex" - The whole HTML contents fits the print area of a single page with respect to the page height/width ratio.</li><li>"mode1" - Scaling mode 1 is applied. Legacy scaling behavior for backward compatibility.</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>smart_scaling_mode</strong>"<br>Possible values: "default", "disabled", "viewport-fit", "content-fit", "single-page-fit", "single-page-fit-ex", "mode1"
@@ -1790,7 +1858,9 @@
                         placeholder="100" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the scaling factor (zoom) for the main page area.
+                            Set the scaling factor (zoom) for the main page area to fit content better. Use values below 100% to shrink oversized content that is getting cut off at page edges. Use values above 100% to enlarge small content for better readability.
+Common use cases include shrinking wide tables to fit (70-80%), or enlarging mobile-optimized layouts for desktop PDFs (120-150%).
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1815,7 +1885,10 @@
                         placeholder="100" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the quality of embedded JPEG images. A lower quality results in a smaller PDF file but can lead to compression artifacts.
+                            Set the quality of embedded JPEG images to balance file size and visual quality. Use 100% for archival documents or when image quality is critical. Use 70-85% for web distribution to significantly reduce file size with minimal visible quality loss.
+Use lower values (50-60%) only when file size is more important than image clarity.
+Common artifacts below 60% include blockiness and color banding.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1838,7 +1911,10 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify which image types will be converted to JPEG. Converting lossless compression image formats (PNG, GIF, ...) to JPEG may result in a smaller PDF file.
+                            Specify which image types will be converted to JPEG to reduce PDF file size. Use <code>"opaque"</code> to convert only non-transparent images (safe for most documents). Use <code>"all"</code> to convert everything including transparent images (transparent areas become white).
+Use <code>"none"</code> to preserve original image formats.
+Ideal for reducing file size when distributing large image-heavy PDFs via email or web.
+
                           </div>
                             <br>Possible values: <ul><li>"none" - No image conversion is done.</li><li>"opaque" - Only opaque images are converted to JPEG images.</li><li>"all" - All images are converted to JPEG images. The JPEG format does not support transparency so the transparent color is replaced by a PDF page background color.</li></ul>
                         </div>
@@ -1864,7 +1940,10 @@
                         placeholder="0" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the DPI of images in PDF. A lower DPI may result in a smaller PDF file.  If the specified DPI is higher than the actual image DPI, the original image DPI is retained (no upscaling is performed). Use <span class='field-value'>0</span> to leave the images unaltered.
+                            Set the DPI of images in PDF to control resolution and file size. Use 300 DPI for professional printing, 150 DPI for everyday documents, 96 DPI for screen-only viewing, or 72 DPI for web distribution.
+Lower DPI creates smaller files but reduces image quality. Use 0 to preserve original image resolution.
+Note that this only downscales - it will not upscale low-resolution images.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1895,7 +1974,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-enable_pdf_forms" name="save-as-pdf-pdfcrowd[enable_pdf_forms]" value="1" <?php checked( $enable_pdf_forms, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Convert HTML forms to fillable PDF forms. Details can be found in the <a href='https://pdfcrowd.com/blog/create-fillable-pdf-form/'>blog post</a>.
+                            Convert HTML forms to fillable PDF forms that users can complete in PDF readers. Use this to create interactive PDFs from HTML forms.
+Ideal for creating fillable applications, surveys, or order forms that work offline. Details can be found in the <a href='https://pdfcrowd.com/blog/create-fillable-pdf-form/'>blog post</a>.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1914,7 +1995,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-linearize" name="save-as-pdf-pdfcrowd[linearize]" value="1" <?php checked( $linearize, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Create linearized PDF. This is also known as Fast Web View.
+                            Create linearized PDF. This is also known as Fast Web View. Use this to optimize PDFs for progressive download, allowing users to start viewing the first page while the rest downloads.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1933,7 +2014,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-encrypt" name="save-as-pdf-pdfcrowd[encrypt]" value="1" <?php checked( $encrypt, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Encrypt the PDF. This prevents search engines from indexing the contents.
+                            Encrypt the PDF to prevent search engines from indexing the contents and add an extra layer of security. Use this for confidential documents, internal reports, or any content you do not want appearing in search results.
+Combine with a password to require authentication for viewing, or just use encryption alone to prevent indexing while keeping the PDF publicly readable.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -1958,7 +2041,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Protect the PDF with a user password. When a PDF has a user password, it must be supplied in order to view the document and to perform operations allowed by the access permissions.
+                            Protect the PDF with a user password to restrict who can open and view the document. Recipients must enter this password to view the PDF. Use this for confidential documents, sensitive data, or content distribution where you want to control access.
+Combine with permission flags to restrict what users can do after opening.
+
                               
                           </div>
                         </div>
@@ -1984,7 +2069,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Protect the PDF with an owner password.  Supplying an owner password grants unlimited access to the PDF including changing the passwords and access permissions.
+                            Protect the PDF with an owner password for administrative control. This password allows changing permissions, passwords, and document restrictions - like a master key. Use different user and owner passwords to give recipients restricted access while retaining full control.
+The owner password should be kept confidential and different from the user password.
+
                               
                           </div>
                         </div>
@@ -2004,7 +2091,8 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_print" name="save-as-pdf-pdfcrowd[no_print]" value="1" <?php checked( $no_print, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Disallow printing of the output PDF.
+                            Disallow printing of the output PDF to protect sensitive content. Use this for confidential documents, copyrighted materials, or preview versions you want to restrict.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2023,7 +2111,8 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_modify" name="save-as-pdf-pdfcrowd[no_modify]" value="1" <?php checked( $no_modify, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Disallow modification of the output PDF.
+                            Disallow modification of the output PDF to maintain document integrity. Use this for official documents, contracts, or records that should not be altered after creation. Prevents recipients from editing content, adding annotations, or extracting pages.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2042,7 +2131,8 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-no_copy" name="save-as-pdf-pdfcrowd[no_copy]" value="1" <?php checked( $no_copy, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Disallow text and graphics extraction from the output PDF.
+                            Disallow text and graphics extraction from the output PDF to protect copyrighted content. Use this for ebooks, proprietary documents, or materials where you want to prevent easy copying and redistribution.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2067,7 +2157,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the title of the PDF.
+                            Set the title of the PDF that appears in PDF reader title bars and document properties. Use descriptive titles for better organization and searchability in document management systems.
+This metadata helps users identify documents when multiple PDFs are open and improves accessibility for screen readers.
+
                               
                           </div>
                         </div>
@@ -2093,7 +2185,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the subject of the PDF.
+                            Set the subject of the PDF to categorize or summarize the document content. Use this to add searchable metadata for document management systems, improve organization in large PDF libraries, or provide context about the document's purpose.
+Appears in PDF properties dialog.
+
                               
                           </div>
                         </div>
@@ -2119,7 +2213,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the author of the PDF.
+                            Set the author of the PDF for attribution and document tracking. Use this to identify who created the document, important for official documents, reports, or publications.
+This metadata appears in PDF properties and helps with document management and version control.
+
                               
                           </div>
                         </div>
@@ -2145,7 +2241,9 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Associate keywords with the document.
+                            Associate keywords with the document to improve searchability in document management systems. Use relevant terms that describe the content, making it easier to find documents later.
+Separate multiple keywords with commas. Particularly useful for large document repositories or DAM systems.
+
                               
                           </div>
                         </div>
@@ -2165,7 +2263,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-extract_meta_tags" name="save-as-pdf-pdfcrowd[extract_meta_tags]" value="1" <?php checked( $extract_meta_tags, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Extract meta tags (author, keywords and description) from the input HTML and use them in the output PDF.
+                            Extract meta tags (author, keywords and description) from the input HTML and automatically populate PDF metadata. Use this when converting web pages that already have proper HTML meta tags, saving you from manually setting title, author, and keywords.
+Ideal for automated conversion workflows where source HTML is well-structured.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2202,7 +2302,8 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify the page layout to be used when the document is opened.
+                            Control how pages appear when the PDF opens in viewers that respect these preferences. <code>"single-page"</code> for focused reading one page at a time. <code>"one-column"</code> for continuous scrolling like a web page. <code>"two-column-left"</code> for book-like layouts with odd pages on left (international standard). <code>"two-column-right"</code> for magazines with odd pages on right.
+
                           </div>
                             <br>Possible values: <ul><li>"single-page" - Display one page at a time.</li><li>"one-column" - Display the pages in one column.</li><li>"two-column-left" - Display the pages in two columns, with odd-numbered pages on the left.</li><li>"two-column-right" - Display the pages in two columns, with odd-numbered pages on the right.</li></ul>
                         </div>
@@ -2227,7 +2328,8 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify how the document should be displayed when opened.
+                            Control the initial display mode when the PDF opens. <code>"full-screen"</code> for presentations and kiosk displays where you want an immersive experience. <code>"thumbnails"</code> for long documents where visual page navigation is helpful. <code>"outlines"</code> for structured documents with bookmarks/table of contents.
+
                           </div>
                             <br>Possible values: <ul><li>"full-screen" - Full-screen mode.</li><li>"thumbnails" - Thumbnail images are visible.</li><li>"outlines" - Document outline is visible.</li></ul>
                         </div>
@@ -2252,7 +2354,8 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify how the page should be displayed when opened.
+                            Control how the PDF is initially zoomed when opened.
+
                           </div>
                             <br>Possible values: <ul><li>"fit-width" - The page content is magnified just enough to fit the entire width of the page within the window.</li><li>"fit-height" - The page content is magnified just enough to fit the entire height of the page within the window.</li><li>"fit-page" - The page content is magnified just enough to fit the entire page within the window both horizontally and vertically. If the required horizontal and vertical magnification factors are different, use the smaller of the two, centering the page within the window in the other dimension.</li></ul>
                         </div>
@@ -2322,7 +2425,8 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-hide_toolbar" name="save-as-pdf-pdfcrowd[hide_toolbar]" value="1" <?php checked( $hide_toolbar, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify whether to hide the viewer application's tool bars when the document is active.
+                            Hide the viewer's toolbar when the PDF is opened to provide a cleaner, more focused reading experience. Use this for presentations, kiosk displays, or immersive reading where you want minimal UI distractions.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2341,7 +2445,8 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-hide_menubar" name="save-as-pdf-pdfcrowd[hide_menubar]" value="1" <?php checked( $hide_menubar, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify whether to hide the viewer application's menu bar when the document is active.
+                            Hide the viewer's menu bar when the PDF is opened for a cleaner interface. Use this for kiosk mode, presentations, or embedded PDFs where you want to minimize UI elements.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2360,7 +2465,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-hide_window_ui" name="save-as-pdf-pdfcrowd[hide_window_ui]" value="1" <?php checked( $hide_window_ui, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify whether to hide user interface elements in the document's window (such as scroll bars and navigation controls), leaving only the document's contents displayed.
+                            Hide user interface elements like scroll bars and navigation controls when the PDF opens. Use this for presentation mode, digital signage, or embedded PDFs where you want the most minimal interface possible.
+Combines with other UI hiding options for full-screen immersive viewing.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2379,7 +2486,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-fit_window" name="save-as-pdf-pdfcrowd[fit_window]" value="1" <?php checked( $fit_window, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify whether to resize the document's window to fit the size of the first displayed page.
+                            Resize the PDF viewer window to fit the size of the first displayed page when opened. Use this to ensure the PDF opens at an appropriate size rather than filling the entire screen.
+Particularly useful for small documents, forms, or certificates that look better at actual size.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2398,7 +2507,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-center_window" name="save-as-pdf-pdfcrowd[center_window]" value="1" <?php checked( $center_window, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify whether to position the document's window in the center of the screen.
+                            Position the PDF viewer window in the center of the screen when opened. Use this with window resizing to create a professional, centered display for forms, certificates, or small documents.
+Improves the initial viewing experience by avoiding corner-positioned windows.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2417,7 +2528,9 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-display_title" name="save-as-pdf-pdfcrowd[display_title]" value="1" <?php checked( $display_title, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify whether the window's title bar should display the document title. If false , the title bar should instead display the name of the PDF file containing the document.
+                            Display the title of the HTML document in the PDF viewer's title bar instead of the filename. Use this to show more descriptive titles when PDFs are opened - particularly useful when the filename is cryptic or auto-generated.
+Improves user experience by showing meaningful document names.
+
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2436,7 +2549,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-right_to_left" name="save-as-pdf-pdfcrowd[right_to_left]" value="1" <?php checked( $right_to_left, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the predominant reading order for text to right-to-left. This option has no direct effect on the document's contents or page numbering but can be used to determine the relative positioning of pages when displayed side by side or printed n-up
+                            Set the predominant reading order for text to right-to-left. This option has no direct effect on the document's contents or page numbering but can be used to determine the relative positioning of pages when displayed side by side or printed n-up.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2522,9 +2635,9 @@
                     </select>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specify the input data format.
+                            Specify the input data format. Use <code>"auto"</code> for automatic detection or explicitly set to JSON, XML, YAML, or CSV when format is known.
                           </div>
-                            <br>Possible values: <ul><li>"auto" - the data format is auto detected</li><li>"json"</li><li>"xml"</li><li>"yaml"</li><li>"csv"</li></ul>
+                            <br>Possible values: <ul><li>"auto" - The data format is auto-detected.</li><li>"json"</li><li>"xml"</li><li>"yaml"</li><li>"csv"</li></ul>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
                             Shortcode and function parameter: "<strong>data_format</strong>"<br>Possible values: "auto", "json", "xml", "yaml", "csv"
@@ -2631,7 +2744,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the advanced data options:<ul><li><span class='field-value'>csv_delimiter</span> - The CSV data delimiter, the default is <span class='field-value'>,</span>.</li><li><span class='field-value'>xml_remove_root</span> - Remove the root XML element from the input data.</li><li><span class='field-value'>data_root</span> - The name of the root element inserted into the input data without a root node (e.g. CSV), the default is <span class='field-value'>data</span>.</li></ul>
+                            Set the advanced data options:<ul><li><code>csv_delimiter</code> - The CSV data delimiter, the default is <code>,</code>.</li><li><code>xml_remove_root</code> - Remove the root XML element from the input data.</li><li><code>data_root</code> - The name of the root element inserted into the input data without a root node (e.g. CSV), the default is <code>data</code>.</li></ul>
                               
                           </div>
                         </div>
@@ -2663,7 +2776,7 @@
                     <input type="checkbox" id="save-as-pdf-pdfcrowd-debug_log" name="save-as-pdf-pdfcrowd[debug_log]" value="1" <?php checked( $debug_log, 1 ); ?> autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Turn on the debug logging. Details about the conversion are stored in the debug log. The debug log is available in <a href='https://pdfcrowd.com/user/account/log/conversion/'>conversion statistics</a>.
+                            Turn on debug logging to troubleshoot conversion issues. Details about the conversion process, including resource loading, rendering steps, and error messages are stored in the debug log. Use this when conversions fail or produce unexpected results. The debug log is available in <a href='https://pdfcrowd.com/user/account/log/conversion/'>conversion statistics</a>.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -2688,7 +2801,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Tag the conversion with a custom value. The tag is used in <a href='https://pdfcrowd.com/user/account/log/conversion/'>conversion statistics</a>. A value longer than 32 characters is cut off.
+                            Tag the conversion with a custom value for tracking and analytics. Use this to categorize conversions by customer ID, document type, or business unit. The tag appears in <a href='https://pdfcrowd.com/user/account/log/conversion/'>conversion statistics</a>. A value longer than 32 characters is cut off.
                               
                           </div>
                         </div>
@@ -2714,7 +2827,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A proxy server used by the conversion process for accessing the source URLs with HTTP scheme. It can help to circumvent regional restrictions or provide limited access to your intranet.
+                            A proxy server used by the conversion process for accessing the source URLs with HTTP scheme. This can help circumvent regional restrictions or provide limited access to your intranet.
                               The value must have format DOMAIN_OR_IP_ADDRESS:PORT.
                           </div>
                         </div>
@@ -2740,7 +2853,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A proxy server used by the conversion process for accessing the source URLs with HTTPS scheme. It can help to circumvent regional restrictions or provide limited access to your intranet.
+                            A proxy server used by the conversion process for accessing the source URLs with HTTPS scheme. This can help circumvent regional restrictions or provide limited access to your intranet.
                               The value must have format DOMAIN_OR_IP_ADDRESS:PORT.
                           </div>
                         </div>
@@ -2766,7 +2879,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A client certificate to authenticate the converter on your web server. The certificate is used for two-way SSL/TLS authentication and adds extra security.
+                            A client certificate to authenticate the converter on your web server. The certificate is used for two-way SSL/TLS authentication (mutual TLS) and adds extra security. Use this when converting content from servers that require client certificate authentication for access.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -2792,7 +2905,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            A password for PKCS12 file with a client certificate if it is needed.
+                            A password for the PKCS12 file with a client certificate if the certificate file is password-protected.
                               
                           </div>
                         </div>
@@ -2830,7 +2943,7 @@
                         placeholder="300" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the internal DPI resolution used for positioning of PDF contents. It can help in situations when there are small inaccuracies in the PDF. It is recommended to use values that are a multiple of 72, such as 288 or 360.
+                            Set the internal DPI resolution used for positioning of PDF contents. It can help in situations where there are small inaccuracies in the PDF. It is recommended to use values that are a multiple of 72, such as 288 or 360.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -3052,9 +3165,9 @@
                           <div>
                             Add special CSS classes to the main document's body element. This allows applying custom styling based on these classes:
   <ul>
-    <li><span class='field-value'>pdfcrowd-page-X</span> - where X is the current page number</li>
-    <li><span class='field-value'>pdfcrowd-page-odd</span> - odd page</li>
-    <li><span class='field-value'>pdfcrowd-page-even</span> - even page</li>
+    <li><code>pdfcrowd-page-X</code> - where X is the current page number</li>
+    <li><code>pdfcrowd-page-odd</code> - odd page</li>
+    <li><code>pdfcrowd-page-even</code> - even page</li>
   </ul>
 
                           </div>
@@ -3080,12 +3193,12 @@
                           <div>
                             Add special CSS classes to the header/footer's body element. This allows applying custom styling based on these classes:
   <ul>
-    <li><span class='field-value'>pdfcrowd-page-X</span> - where X is the current page number</li>
-    <li><span class='field-value'>pdfcrowd-page-count-X</span> - where X is the total page count</li>
-    <li><span class='field-value'>pdfcrowd-page-first</span> - the first page</li>
-    <li><span class='field-value'>pdfcrowd-page-last</span> - the last page</li>
-    <li><span class='field-value'>pdfcrowd-page-odd</span> - odd page</li>
-    <li><span class='field-value'>pdfcrowd-page-even</span> - even page</li>
+    <li><code>pdfcrowd-page-X</code> - where X is the current page number</li>
+    <li><code>pdfcrowd-page-count-X</code> - where X is the total page count</li>
+    <li><code>pdfcrowd-page-first</code> - the first page</li>
+    <li><code>pdfcrowd-page-last</code> - the last page</li>
+    <li><code>pdfcrowd-page-odd</code> - odd page</li>
+    <li><code>pdfcrowd-page-even</code> - even page</li>
   </ul>
 
                           </div>
@@ -3112,7 +3225,7 @@
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the maximum time to load the page and its resources. After this time, all requests will be considered successful. This can be useful to ensure that the conversion does not timeout. Use this method if there is no other way to fix page loading.
+                            Set the maximum time for loading the page and its resources. After this time, all requests will be considered successful. This can be useful to ensure that the conversion does not timeout. Use this method if there is no other way to fix page loading.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>
@@ -3135,7 +3248,7 @@
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
                             <p id="json-format">
-Allows to configure conversion via JSON. The configuration defines various page settings for individual PDF pages or ranges of pages. It provides flexibility in designing each page of the PDF, giving control over each page's size, header, footer etc. If a page or parameter is not explicitly specified, the system will use the default settings for that page or attribute. If a JSON configuration is provided, the settings in the JSON will take precedence over the global options.
+Configure conversion via JSON. The configuration defines various page settings for individual PDF pages or ranges of pages. It provides flexibility in designing each page of the PDF, giving control over each page's size, header, footer, etc. If a page or parameter is not explicitly specified, the system will use the default settings for that page or attribute. If a JSON configuration is provided, the settings in the JSON will take precedence over the global options.
 </p>
 
 <p>
@@ -3147,7 +3260,7 @@ The structure of the JSON must be:
       <li>
       <em>pages</em>:
         A comma-separated list of page numbers or ranges.
-        Special strings may be used, such as `odd`, `even` and `last`.
+        Special strings may be used, such as <code>odd</code>, <code>even</code>, and <code>last</code>.
         For example:
       <ul>
       <li><em>1-</em>: from page 1 to the end of the document</li>
@@ -3191,7 +3304,7 @@ The structure of the JSON must be:
 </ul>
 
 <p>
-Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centimeters 'cm', pixels 'px', or points 'pt'.
+Dimensions may be empty, 0 or specified in inches <code>"in"</code>, millimeters <code>"mm"</code>, centimeters <code>"cm"</code>, pixels <code>"px"</code>, or points <code>"pt"</code>.
 </p>
 
                               
@@ -3219,7 +3332,7 @@ Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centim
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Allows to configure the conversion process via JSON file. See details of the <a href="#json-format">JSON string</a>. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.json.
+                            Configure the conversion process via JSON file. See details of the <a href="#json-format">JSON string</a>. Absolute or relative filepath can be used. To apply WordPress uploaded media use e.g. ../wp-content/uploads/2019/06/your-file.json.
                               The file must exist and not be empty.
                           </div>
                         </div>
@@ -3256,7 +3369,7 @@ Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centim
                     </div>
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies the User-Agent HTTP header that will be used by the converter when a request is made to the converted web page.
+                            Specify the User-Agent HTTP header that will be used by the converter when a request is made to the converted web page.
                           </div>
                             <br>Possible values: <ul><li>"chrome-desktop" - The user-agent for desktop chrome corresponding to the converter used.</li><li>"chrome-mobile" - The user-agent for mobile chrome corresponding to the converter used.</li><li>"latest-chrome-desktop" - The user-agent of the recently released Chrome browser on desktops.</li><li>"latest-chrome-mobile" - The user-agent of the recently released Chrome browser on mobile devices.</li><li>A custom string for the user agent.</li></ul>
                         </div>
@@ -3342,7 +3455,7 @@ Dimensions may be empty, 0 or specified in inches 'in', millimeters 'mm', centim
                         placeholder="1" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Specifies the number of automatic retries when the 502 or 503 HTTP status code is received. The status code indicates a temporary network issue. This feature can be disabled by setting to 0.
+                            Specify the number of automatic retries when a 502 or 503 HTTP status code is received. The status code indicates a temporary network issue. This feature can be disabled by setting to 0.
                           </div>
                         </div>
                         <div class='save-as-pdf-pdfcrowd-devi'>

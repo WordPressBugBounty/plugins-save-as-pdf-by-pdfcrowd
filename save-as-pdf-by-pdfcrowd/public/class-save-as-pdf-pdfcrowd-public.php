@@ -133,6 +133,16 @@ class Save_As_Pdf_Pdfcrowd_Public {
         wp_localize_script($components,
                            'save_as_pdf_pdfcrowd_i18n',
                            $components_translations);
+
+        $public_data = array(
+            'ajax_url' => admin_url('admin-ajax.php')
+        );
+
+        wp_localize_script(
+            $this->plugin_name,
+            'save_as_pdf_pdfcrowd',
+            $public_data
+        );
     }
 
     public function setup_shortcodes() {
@@ -142,16 +152,6 @@ class Save_As_Pdf_Pdfcrowd_Public {
                       array($this, 'block_save_as_pdf_pdfcrowd_shortcode'));
         add_action('wp_ajax_save_as_pdf_pdfcrowd', array($this, 'save_as_pdf_pdfcrowd'));
         add_action('wp_ajax_nopriv_save_as_pdf_pdfcrowd', array($this, 'save_as_pdf_pdfcrowd'));
-        add_action('wp_head', array($this, 'add_ajaxurl'), 1);
-    }
-
-    function add_ajaxurl() { ?>
-            <script type="text/javascript">
-            //<![CDATA[
-            var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' )); ?>';
-            //]]>
-            </script>
-        <?php
     }
 
     public static $DEFAULTS = array(
@@ -232,7 +232,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4530',
+        'version' => '4560',
     );
 
     private static $API_OPTIONS = array(
@@ -459,7 +459,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4530) {
+        if($options['version'] == 4560) {
             return $options;
         }
 
@@ -494,7 +494,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4530;
+        $options['version'] = 4560;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -849,7 +849,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         if($custom_options) {
             $custom_options['pflags'] = $pflags;
             $custom_options = $this->encrypt(
-                json_encode($custom_options), $options['api_key']);
+                json_encode($custom_options), $this->get_encryption_key($options['api_key']));
         } else {
             $custom_options = '';
         }
@@ -1275,7 +1275,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.3 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.6 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1605,7 +1605,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
 
         if(!empty($_POST['options'])) {
             $decrypted = $this->decrypt(urldecode($_POST['options']),
-                                        $options['api_key']);
+                                        $this->get_encryption_key($options['api_key']));
             if($decrypted === false) {
                 esc_html_e(
                     'Configuration error. Refresh page and retry.',
@@ -1760,6 +1760,34 @@ HTML;
 
     private function get_function_name($key) {
         return str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+    }
+
+    /**
+     * Get the encryption key used for encrypting/decrypting options.
+     *
+     * When API key is set, use it for backward compatibility with cached pages.
+     * When API key is empty (demo mode), use a random secret to prevent
+     * attackers from crafting malicious payloads (CVE-2026-0862 fix).
+     *
+     * @since    4.5.6
+     * @param    string    $api_key    The API key from options
+     * @return   string    The encryption key to use
+     */
+    private function get_encryption_key($api_key) {
+        // If API key is set and not 'demo', use it (backward compatible, attacker doesn't know it)
+        if (!empty($api_key) && $api_key !== 'demo') {
+            return $api_key;
+        }
+
+        // For demo mode (empty API key or 'demo'), use a random secret
+        // This prevents CVE-2026-0862 where attacker could craft payloads
+        $secret = get_option('save-as-pdf-pdfcrowd_encryption_secret');
+        if (empty($secret)) {
+            // Generate a random 32-character secret on first use
+            $secret = wp_generate_password(32, true, true);
+            update_option('save-as-pdf-pdfcrowd_encryption_secret', $secret);
+        }
+        return $secret;
     }
 
     private function encrypt($string, $key) {
