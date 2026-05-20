@@ -11,6 +11,9 @@
 * @package    Save_As_Pdf_Pdfcrowd
 * @subpackage Save_As_Pdf_Pdfcrowd/admin/partials
 */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
 ?>
 
 <?php if(get_option('save_as_pdf_pdfcrowd_error_code')) : ?>
@@ -2744,7 +2747,7 @@ Improves user experience by showing meaningful document names.
                         placeholder="" autocomplete="off" />
                         <div class="save-as-pdf-pdfcrowd-description">
                           <div>
-                            Set the advanced data options:<ul><li><code>csv_delimiter</code> - The CSV data delimiter, the default is <code>,</code>.</li><li><code>xml_remove_root</code> - Remove the root XML element from the input data.</li><li><code>data_root</code> - The name of the root element inserted into the input data without a root node (e.g. CSV), the default is <code>data</code>.</li></ul>
+                            Set the advanced data options as comma separated <code>key=value</code> pairs:<ul><li><code>csv_delimiter</code> - The CSV data delimiter, the default is <code>,</code>.</li><li><code>xml_remove_root</code> - Remove the root XML element from the input data.</li><li><code>data_root</code> - The name of the root element inserted into the input data without a root node (e.g. CSV), the default is <code>data</code>.</li></ul>
                               
                           </div>
                         </div>

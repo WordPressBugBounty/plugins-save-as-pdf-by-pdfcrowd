@@ -12,6 +12,9 @@
 * @subpackage Save_As_Pdf_Pdfcrowd/admin/partials
 */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 function unfiltered_html_notice($option) {
     if(!current_user_can('unfiltered_html')) {
         echo '<div style="margin: 1rem 0;"><span class="notice notice-info" style="padding: 0.5rem">Only users with <code>unfiltered_html</code> capability can edit the '

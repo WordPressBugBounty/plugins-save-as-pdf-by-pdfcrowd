@@ -13,6 +13,9 @@
  * @subpackage Save_As_Pdf_Pdfcrowd/includes
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * The core plugin class.
  *
@@ -92,7 +95,7 @@ class Save_As_Pdf_Pdfcrowd {
             return SAVE_AS_PDF_VERSION;
         }
 
-        return '4.5.6';
+        return '4.5.7';
     }
 
     /**

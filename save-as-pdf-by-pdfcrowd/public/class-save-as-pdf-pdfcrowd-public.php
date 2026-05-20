@@ -10,6 +10,9 @@
  * @subpackage Save_As_Pdf_Pdfcrowd/public
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -232,7 +235,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4560',
+        'version' => '4570',
     );
 
     private static $API_OPTIONS = array(
@@ -459,7 +462,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4560) {
+        if($options['version'] == 4570) {
             return $options;
         }
 
@@ -494,7 +497,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4560;
+        $options['version'] = 4570;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -1275,7 +1278,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.6 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.7 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1365,7 +1368,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         if(!filter_var($url, FILTER_VALIDATE_URL)) {
             $url = get_permalink(get_page_by_path($url));
         }
-        wp_redirect($url .
+        wp_safe_redirect($url .
                     "?error-code={$code}&error-message={$message}&error-details={$details}");
         exit;
     }

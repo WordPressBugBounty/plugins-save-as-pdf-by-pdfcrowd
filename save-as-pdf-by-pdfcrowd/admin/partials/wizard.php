@@ -1,3 +1,4 @@
+<?php defined( 'ABSPATH' ) || exit; ?>
 <div id="save-as-pdf-pdfcrowd-wizard">
     <h2></h2>
     <h2>

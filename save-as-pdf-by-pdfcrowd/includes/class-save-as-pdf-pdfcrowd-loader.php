@@ -10,6 +10,9 @@
  * @subpackage Save_As_Pdf_Pdfcrowd/includes
  */
 
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Register all actions and filters for the plugin.
  *
