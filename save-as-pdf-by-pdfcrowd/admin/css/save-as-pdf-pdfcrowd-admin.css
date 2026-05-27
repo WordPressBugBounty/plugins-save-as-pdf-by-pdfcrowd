@@ -491,6 +491,11 @@ input:checked + .save-as-pdf-pdfcrowd-slider:before {
     padding: 1em 1em 1em 0;
 }
 
+/* nudge the option label down so it lines up better with its input */
+.save-as-pdf-pdfcrowd-set-group > th label {
+    padding-top: 5px;
+}
+
 #save-as-pdf-pdfcrowd-save-wrap {
     position: relative;
     display: inline-block;

@@ -235,7 +235,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4570',
+        'version' => '4580',
     );
 
     private static $API_OPTIONS = array(
@@ -462,7 +462,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4570) {
+        if($options['version'] == 4580) {
             return $options;
         }
 
@@ -497,7 +497,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4570;
+        $options['version'] = 4580;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -1278,7 +1278,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.7 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.5.8 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
