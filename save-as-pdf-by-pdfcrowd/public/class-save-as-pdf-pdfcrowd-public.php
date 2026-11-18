@@ -235,7 +235,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
         'smart_scaling_mode' => '',
         'url_lookup' => 'auto',
         'username' => '',
-        'version' => '4630',
+        'version' => '4700',
     );
 
     private static $API_OPTIONS = array(
@@ -475,7 +475,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             $options['version'] = 1000;
         }
 
-        if($options['version'] == 4630) {
+        if($options['version'] == 4700) {
             return $options;
         }
 
@@ -510,7 +510,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">',
             }
         }
 
-        $options['version'] = 4630;
+        $options['version'] = 4700;
         if(!isset($options['button_indicator_html'])) {
             $options['button_indicator_html'] = '<img src="https://storage.googleapis.com/pdfcrowd-cdn/images/spinner.gif"
 style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
@@ -927,8 +927,8 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                     }
 
                     if(array_key_exists('button_indicator_html', $attrs)) {
-                        $attrs['button_custom_html'] = wp_kses_post(
-                            $attrs['button_custom_html']);
+                        $attrs['button_indicator_html'] = wp_kses_post(
+                            $attrs['button_indicator_html']);
                     }
 
                     // do not allow to set custom java scripts for conversion
@@ -1310,7 +1310,7 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
         $headers = array(
             'Authorization' => $auth,
             'Content-Type' => 'multipart/form-data; boundary=' . $boundary,
-            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.6.3 ('
+            'User-Agent' => 'pdfcrowd_wordpress_plugin/4.7.0 ('
             . $pflags . '/' . $wp_version . '/' . phpversion() . ')'
         );
 
@@ -1648,6 +1648,12 @@ style="position: absolute; top: calc(50% - 12px); left: calc(50% - 12px);">';
                 wp_die();
             }
             $custom_options = json_decode($decrypted);
+            if(!is_object($custom_options) && !is_array($custom_options)) {
+                esc_html_e(
+                    'Configuration error. Refresh page and retry.',
+                    $this->plugin_name);
+                wp_die();
+            }
             $options = wp_parse_args($custom_options, $options);
         }
 
@@ -1829,23 +1835,35 @@ HTML;
         $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
         $iv = openssl_random_pseudo_bytes($ivlen);
         $ciphertext_raw = openssl_encrypt($string, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
-        $hmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
+        // authenticate the IV together with the ciphertext (encrypt-then-MAC)
+        $hmac = hash_hmac('sha256', $iv.$ciphertext_raw, $key, $as_binary=true);
         return base64_encode( $iv.$hmac.$ciphertext_raw );
     }
 
     private function decrypt($ciphertext, $key) {
-        $c = base64_decode($ciphertext);
-        $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
-        $iv = substr($c, 0, $ivlen);
-        $hmac = substr($c, $ivlen, $sha2len=32);
-        $ciphertext_raw = substr($c, $ivlen+$sha2len);
-        $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
-        $calcmac = hash_hmac('sha256', $ciphertext_raw, $key, $as_binary=true);
-        if (hash_equals($hmac, $calcmac))//PHP 5.6+ timing attack safe comparison
-        {
-            return $original_plaintext;
+        $c = base64_decode($ciphertext, $strict=true);
+        if ($c === false) {
+            return false;
         }
-        return false;
+        $ivlen = openssl_cipher_iv_length($cipher="AES-128-CBC");
+        $sha2len = 32;
+        if (strlen($c) < $ivlen + $sha2len) {
+            return false;
+        }
+        $iv = substr($c, 0, $ivlen);
+        $hmac = substr($c, $ivlen, $sha2len);
+        $ciphertext_raw = substr($c, $ivlen + $sha2len);
+        // verify the MAC over IV + ciphertext BEFORE decrypting; the computed
+        // MAC is the first argument to hash_equals (PHP 5.6+ timing-safe compare)
+        $calcmac = hash_hmac('sha256', $iv.$ciphertext_raw, $key, $as_binary=true);
+        if (!hash_equals($calcmac, $hmac)) {
+            return false;
+        }
+        $original_plaintext = openssl_decrypt($ciphertext_raw, $cipher, $key, $options=OPENSSL_RAW_DATA, $iv);
+        if ($original_plaintext === false) {
+            return false;
+        }
+        return $original_plaintext;
     }
 }
 
